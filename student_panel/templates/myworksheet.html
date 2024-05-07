@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+    <div class="hk-pg-header mt-3 mb-2 d-flex">
+        <h5 class="hk-pg-title"><i class="material-icons">assignment</i>&nbsp;Assignment Title: Introduction to Python</h5>
+        <h5 class="hk-pg-title">Lesson: Core Python</h5>
+    </div>
+    <section class="hk-sec-wrapper m-0">
+        <div class="card shadow m-0">
+            <h5 class="card-header" style="background-color: #132649; color: white;">Question:1</h5>
+            <div class="card-body d-flex">
+                <div class="shadow col-4 mr-2" style="height: 300px;">
+                    <h5>1. What is use of decorator in Python ?</h5>
+                </div>
+        
+                <form action="" class="worksheet-questions col-8">
+                    <div class="form-group ">
+                        <textarea class="worksheet_answer" name="worksheet_answer"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow mt-3">
+            <h5 class="card-header" style="background-color: #132649; color: white;">Question:2</h5>
+            <div class="card-body d-flex">
+                <div class="shadow col-4 mr-2" style="height: 300px;">
+                    <h5>2. What is use of classmethod and staticmethod in Python ?</h5>
+                </div>
+        
+                <form action="" class="worksheet-questions col-8">
+                    <div class="form-group ">
+                        <textarea class="worksheet_answer" name="worksheet_answer"></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize CKEditor for the textareas
+        var textareas = document.querySelectorAll('.worksheet_answer');
+        textareas.forEach(function(textarea) {
+            CKEDITOR.replace(textarea);
+        });
+
+        // Handle form submission
+        var forms = document.querySelectorAll('.worksheet-questions');
+        forms.forEach(function(form) {
+            form.addEventListener('submit', function (event) {
+                // Get CKEditor content
+                var editorData = CKEDITOR.instances[event.target.querySelector('.worksheet_answer').getAttribute('name')].getData();
+
+                // Set the CKEditor content in the textarea before form submission
+                event.target.querySelector('.worksheet_answer').value = editorData;
+            });
+        });
+    });
+</script>
+{% endblock %}

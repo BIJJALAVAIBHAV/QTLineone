@@ -1,0 +1,186 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<section class="hk-sec-wrapper">
+  <div class="row">
+      <div class="col">
+        
+      </div>
+    
+      <div class="button_operations   col-auto ml-auto p-0 mb-3"  id="button_operations">
+          
+      </div>
+    </div>
+
+
+<div class="row">
+  <div class="col-sm">
+    <div class=" table-wrap">
+      <table
+      id="datable_1"
+      class="table table-hover w-100 display pb-30 table-bordered">
+      <thead class="bg-dark">
+        <tr>
+          <th class="text-white  text-center">
+            <p class="mr-5">All<input type="checkbox" class="form-check-input" style="margin-left:3px; margin-right: 20px;" id="checkAll"></p>
+            
+        </th>
+          <th class="text-white">Token ID</th>
+          <th class="text-white">Student Name</th>
+          <th class="text-white">Mobile No</th>
+          <th class="text-white">Email</th>
+          <th class="text-white">Course</th>
+          <th class="text-white">Training Type</th>
+          <th class="text-white">Lead Source</th>
+          <th class="text-white">Lead Stage</th>
+          <!-- <th class="text-white">Branch Name</th> -->
+          
+         
+          
+                        
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+        <tr>
+        
+          <td><input type="checkbox" class="row-checkbox" data-id="{{i.id}}"></td>
+          
+          <td>kljslkgldfg</td>
+          <td>897986546546878</td>
+          <td>5sdgsdfgsdf</td>
+          <td>sdgsdfgdsgsdf</td>
+         
+          <td>gfjsfjasdkjf</td>
+          <td>fksjhfkjalsfkjasd</td>
+          <td>kashdfljkashfkjasd</td>
+          <td>kashdfljkashfkjasd</td>
+          
+          
+          </tr>
+          <tr>
+        
+            <td><input type="checkbox" class="row-checkbox" data-id="{{i.id}}"></td>
+            
+            <td>kljslkgldfg</td>
+            <td>897986546546878</td>
+            <td>5sdgsdfgsdf</td>
+            <td>sdgsdfgdsgsdf</td>
+           
+            <td>gfjsfjasdkjf</td>
+            <td>fksjhfkjalsfkjasd</td>
+            <td>kashdfljkashfkjasd</td>
+            <td>kashdfljkashfkjasd</td>
+            
+            
+            </tr>
+            <tr>
+        
+              <td><input type="checkbox" class="row-checkbox" data-id="{{i.id}}"></td>
+              
+              <td>kljslkgldfg</td>
+              <td>897986546546878</td>
+              <td>5sdgsdfgsdf</td>
+              <td>sdgsdfgdsgsdf</td>
+             
+              <td>gfjsfjasdkjf</td>
+              <td>fksjhfkjalsfkjasd</td>
+              <td>kashdfljkashfkjasd</td>
+              <td>kashdfljkashfkjasd</td>
+              
+              
+              </tr>
+              <tr>
+        
+                <td><input type="checkbox" class="row-checkbox" data-id="{{i.id}}"></td>
+                
+                <td>kljslkgldfg</td>  
+                <td>897986546546878</td>
+                <td>5sdgsdfgsdf</td>
+                <td>sdgsdfgdsgsdf</td>
+               
+                <td>gfjsfjasdkjf</td>
+                <td>fksjhfkjalsfkjasd</td>
+                <td>kashdfljkashfkjasd</td>
+                <td>kashdfljkashfkjasd</td>
+                
+                
+                </tr>
+                <tr>
+        
+                  <td><input type="checkbox" class="row-checkbox" data-id="{{i.id}}"></td>
+                  
+                  <td>kljslkgldfg</td>
+                  <td>897986546546878</td>
+                  <td>5sdgsdfgsdf</td>
+                  <td>sdgsdfgdsgsdf</td>
+                  <td>gfjsfjasdkjf</td>
+                  <td>fksjhfkjalsfkjasd</td>
+                  <td>kashdfljkashfkjasd</td>
+                  <td>kashdfljkashfkjasd</td>
+                  </tr>
+                  
+      </tbody>
+    </table>
+     
+    </div>
+  </div>
+</div>
+</section>
+{% endblock %}
+{% block scripts %}
+
+<script>
+  $(document).ready(function(){
+    function updateButtonOperations() {
+        var selectedCount = $('.row-checkbox:checked').length;
+        var buttonsHtml = '';
+
+        if (selectedCount >= 1) {
+            // When at least one checkbox is selected
+            var prospectId = $('.row-checkbox:checked').data('id');
+            buttonsHtml = `
+                <button class="btn btn-info mr-2 demo-details" data-target="#Democourse${prospectId}"><i class="fa fa-plus-circle"></i> Add Lead stage</button>
+                <button class="btn btn-dark mr-2 view-details" data-target="#submitmodal${prospectId}"><i class="fa fa-send-o"></i> Send To MQL</button>
+                <button class="btn btn-primary mr-2 view-admission" data-target="#sumbit_admissoinmodal${prospectId}"><i class="fa fa-user"></i> Admission</button>
+                <button class="btn btn-danger mr-2 view-spam" data-target="#spam${prospectId}"><i class="fa fa-info-circle"></i> Spam</button>
+                <button class="btn btn-primary m-1"data-toggle="modal data-target="#edit${prospectId}" "data-target="#Edithr">
+                  <i class="fa fa-pencil"></i>
+                </button>
+                
+            `;
+            if(selectedCount > 1) {
+                // When multiple checkboxes are selected, adjust the buttons accordingly
+                buttonsHtml = `
+                <button class="btn btn-dark mr-2"><i class="fa fa-envelope"></i> Email</button>
+                        <button class="btn btn-success mr-2"><i class="fa fa-phone"></i> WhatsApp</button>
+                        <button class="btn btn-info mr-2"><i class="fa fa-comments"></i> SMS</button>
+                        <button class="btn btn-danger mr-2"><i class="fa fa-trash-o"></i> Delete</button>
+                `;
+            }
+        }
+
+        $('#button_operations').html(buttonsHtml);
+    }
+
+    
+    // Attach change event listener to checkboxes for row selection
+    $(document).on('change', '.row-checkbox', function() {
+        // Check if all checkboxes are selected
+        var allChecked = $('.row-checkbox').length === $('.row-checkbox:checked').length;
+        $('#checkAll').prop('checked', allChecked);
+        updateButtonOperations();
+    });
+
+    // "Check All" functionality
+    $('#checkAll').change(function() {
+        $('.row-checkbox').prop('checked', this.checked);
+        updateButtonOperations();
+    });
+  })
+</script>
+
+
+{% endblock %}

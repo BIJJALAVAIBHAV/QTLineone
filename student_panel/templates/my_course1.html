@@ -1,0 +1,288 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    #nav1 {
+         padding: 2px ; 
+          margin-left: 3px;
+          margin-right: 3px; 
+     }
+      
+ </style>
+ <style>
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: #132649 !important; /* Change this color to your desired color */
+        color: white !important;
+    }
+ </style>
+
+
+ <!-- nav bar start here -->
+ <!-- <div class="card bg-sky-dark-5 " id="nav1"> 
+     <div class="col-12 col-sm-12 col-lg-12 " >
+        <nav class="navbar bg-sky-dark-5 rounded" id="nav1">
+            <div class="container-fluid">
+              <a href="" class="navbar-brand text-white">Course Details</a>
+              <div class="d-flex offset-md-5">
+                <a href="#" class="text-white" style="text-decoration: none;">Dashboard/</a>
+                <a href="{% url 'courses' %}" class="text-white" style="text-decoration: none;">Back</a>
+              </div>
+              
+            </div>
+          </nav>
+     </div>
+ </div>   -->
+ <!-- nav bar ends here    -->
+<div class="container-fluid m-0 mt-4 p-0">
+    
+    <div class="m-0 col-12 col-sm-12 col-lg-12" >  
+        <div class="hk-pg-header m-0">
+            <h4 class="hk-pg-title"><i class="material-icons">assignment</i>&nbsp;Course Details</h4>
+        </div>
+        <section class="hk-sec-wrapper m-0">
+            <div class="row">
+                <div class="col-xl-4" id="card-none3">              
+                    <div class="card rounded shadow-lg">
+                        <img alt=" image cap" class="img-top img-fluid object-fit-contain border rounded" src="{% static 'img/3.jpg' %}">
+                    
+                        <ul class="list-group list-group-flush">                       
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="glyphicon glyphicon-file"></i> Total Chapters</span>
+                                <span>1</span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="fa fa-book"></i> Total Lessons</span>
+                                <span>1</span>
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span><i class="ion ion-md-arrow-dropright-circle"></i> Total Topics</span>
+                                <span>37</span>
+                            </li>    
+                                <div class="row">
+                                    <div class="col-sm mt-3 d-flex justify-content-center">
+                                        <a class="btn" href="{% url 'my_course_video1'%}" style="background-color: #132649; color: white;">Start Course</a>
+                                    </div>
+                                </div>
+                                <br>    
+                        </ul>
+                    </div>
+                </div>  
+
+                <div class="col-xl-8">
+                    <div class="card  ">
+                        <div class="card-header glassy-shine" style="background-color: #132649;">
+                        <span>
+                            <h5 class="mt-0 text-white" style="font-size: 20px;">
+                                Python For Beginners
+                            </h5>
+                        </span>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="d-flex position-relative">
+                                <div class="scrolling-text-container">
+                                    <p style="font-size: 16px;">
+                                        Python is a high-level, dynamic programming language with a simple and readable syntax. 
+                                        Its standard library includes modules and functions for various tasks, making it a versatile and powerful language for a wide range of applications.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <ul class="nav nav-pills  " style="background-color: #f7f5f5;" role="tablist">
+                                <li class="nav-item mx-1">
+                                    <button type="button" class="nav-link active  btn" id="core-tab"  data-toggle="tab" data-target="#core" role="tab" aria-controls="core" aria-selected="true" >Core</button>
+                                </li>
+                                
+                                <li class="nav-item mx-1">
+                                    <button type="button" class="nav-link btn" id="advanced-tab"  data-toggle="tab" data-target="#advanced" role="tab" aria-controls="advanced" aria-selected="false">Advanced</button>
+                                </li>
+                            
+                            </ul>
+                            <div class="tab-content rounded mt-2 mx-1" id="MyTabContent">
+                                <div class="tab-pane fade show active" id="core" role="tabpanel" aria-labelledby="core-tab" >
+                                    <div class="core-tab-content">
+                                        <div class="core-overview">
+                                            <div class="table-wrap mb-20">
+                                                <div class="table-responsive">
+                                                    <table class="table rounded table-light table-bordered mb-0">   
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th style="background-color: #132649;" class="text-white"><i class="ti-arrow-circle-right"></i>&nbsp;&nbsp;Core Python</th>
+                                                                <th style="background-color: #132649;" class="text-white"><i class="ion ion-md-arrow-dropright-circle"></i> Lessons</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- Your table rows -->
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <a class="video-link" href="#" data-video-src="6i3EGqOBRiU" data-video-time="0" style="text-decoration: none;">
+                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. Introduction to Python
+                                                                    </a>
+                                                                </th>
+                                                                <td><h6 class="ps-3 text-primary">3:34</td></tr>  
+                                                            </tr>
+                                                            <!-- Add more rows with different video IDs and start times -->
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <a class="video-link" href="#" data-video-src="La1BdF_sunw" data-video-time="0" style="text-decoration: none;">
+                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Download and Install Python
+                                                                    </a>
+                                                                </th>
+                                                                <td><h6 class="ps-3 text-primary">13:58</td></tr>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="6Nu9cvINQLk" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 3.print function& string cancatination </th></a>
+                                                                <td><h6 class="ps-3 text-primary">8.30</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="a43BIxiZ5EM" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 4.Variables </th></a>
+                                                                <td><h6 class="ps-3 text-primary">15:10</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Vn4RuZ4Y2M0" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 5.Variables Naming Rules </th></a>
+                                                                <td><h6 class="ps-3 text-primary">8:25</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="TTepNRy0wj8" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 6.Datatypes </th></a>
+                                                                <td><h6 class="ps-3 text-primary">23:54</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="kvVPeBBZdtM" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 7.Arthmetic Operators </th></a>
+                                                                <td><h6 class="ps-3 text-primary">15:01</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="ELNIUknegOE" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Assignment Operators </th></a>
+                                                                <td><h6 class="ps-3 text-primary">14:16</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="XbjQ-heGd58" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 9.Bitwise Operators </th></a>
+                                                                <td><h6 class="ps-3 text-primary">17:11</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="BG3lg589HRE" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 10.Identity Operators </th></a>
+                                                                <td><h6 class="ps-3 text-primary">20:27</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="MHl0Jj15crA" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Membership Operators </th></a>
+                                                                <td><h6 class="ps-3 text-primary">9:27</td>  
+                                                            </tr>
+                                                            <!-- Add more rows with different video start times -->
+                                                            <!-- Repeat this pattern for all Core Python videos -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade show " id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+                                    <div class="advanced-tab-pane">
+                                        <div class="advanced-overview">
+                                            <div class="table-wrap mb-20">
+                                                <div class="table-responsive">
+                                                    <table class="table table-light table-bordered mb-0">   
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th style="background-color: #132649; border: none;" class="text-white"><i class="ti-arrow-circle-right"></i>&nbsp;&nbsp;Advanced Python</th>
+                                                                <th style="background-color: #132649; border: none;" class="text-white"><i class="ion ion-md-arrow-dropright-circle"></i> Lessons</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <!-- Your table rows -->
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <a class="video-link" href="#" data-video-src="Ic7ZBKqkS1E" data-video-time="0" style="text-decoration: none;">
+                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. OOPs
+                                                                    </a>
+                                                                </th>
+                                                                <td><h6 class="ps-3 text-primary">22:24</td></tr>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">
+                                                                    <a class="video-link" href="#" data-video-src="Gvm2Sg1rZek" data-video-time="0" style="text-decoration: none;">
+                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Class Object
+                                                                    </a>
+                                                                </th>
+                                                                <td><h6 class="ps-3 text-primary">17:06</td></tr>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="tJNsmm7ZUmk" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 3.class Methods </th>
+                                                                <td><h6 class="ps-3 text-primary">20:49</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="4SO3sScshvA" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 4.Inheritance </th>
+                                                                <td><h6 class="ps-3 text-primary">27:20</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Smlbgao6VL4" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 5.Mutiple Inheritance </th>
+                                                                <td><h6 class="ps-3 text-primary">27:46</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Fv1xFd3LzJo" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 6.Multilevel Inheritance </th>
+                                                                <td><h6 class="ps-3 text-primary">21:11</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="UYxJBJQZU-I" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 7.Hierarchical Inheritance </th>
+                                                                <td><h6 class="ps-3 text-primary">17:08</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="E6aDQWX-ASc" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Hybrid Inheritance </th>
+                                                                <td><h6 class="ps-3 text-primary">10:45</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Sx1Hjr67xO0" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 9.File Handling </th>
+                                                                <td><h6 class="ps-3 text-primary">45:32</td>  
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row"><a class="video-link" href="#" data-video-src="64tJdFVh1Vs" data-video-time="0m0s" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 10.Abstract Class & Abstract Method </th>
+                                                                <td><h6 class="ps-3 text-primary">26:38</td>  
+                                                            </tr>
+                                                            <!-- Add more rows with different video start times -->
+                                                            <!-- Repeat this pattern for all Advanced Python videos -->
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                              </div> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </section>
+    </div>
+    
+</div>
+
+
+<br>
+
+
+
+
+{% endblock %}
