@@ -42,7 +42,7 @@
         <section class="hk-sec-wrapper m-0">
             <div class="row">
                 <div class="col-xl-4" id="card-none3">              
-                    <div class="card rounded shadow-lg">
+                    <div class="card rounded shadow">
                         <img alt=" image cap" class="img-top img-fluid object-fit-contain border rounded" src="{% static 'img/3.jpg' %}">
                     
                         <ul class="list-group list-group-flush">                       
@@ -62,7 +62,7 @@
                             </li>    
                                 <div class="row">
                                     <div class="col-sm mt-3 d-flex justify-content-center">
-                                        <a class="btn" href="{% url 'my_course_video1'%}" style="background-color: #132649; color: white;">Start Course</a>
+                                        <a class="btn btn-sm" href="{% url 'my_course_video1'%}" style="background-color: #132649; color: white;">Start Course</a>
                                     </div>
                                 </div>
                                 <br>    
@@ -93,13 +93,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm">
-                            <ul class="nav nav-pills  " style="background-color: #f7f5f5;" role="tablist">
+                            <ul class="nav nav-pills p-2" style="background-color: #f7f5f5;" role="tablist">
                                 <li class="nav-item mx-1">
-                                    <button type="button" class="nav-link active  btn" id="core-tab"  data-toggle="tab" data-target="#core" role="tab" aria-controls="core" aria-selected="true" >Core</button>
+                                    <button type="button" class="nav-link active  btn btn-sm" id="core-tab"  data-toggle="tab" data-target="#core" role="tab" aria-controls="core" aria-selected="true" >Core</button>
                                 </li>
                                 
                                 <li class="nav-item mx-1">
-                                    <button type="button" class="nav-link btn" id="advanced-tab"  data-toggle="tab" data-target="#advanced" role="tab" aria-controls="advanced" aria-selected="false">Advanced</button>
+                                    <button type="button" class="nav-link btn btn-sm" id="advanced-tab"  data-toggle="tab" data-target="#advanced" role="tab" aria-controls="advanced" aria-selected="false">Advanced</button>
                                 </li>
                             
                             </ul>
@@ -110,79 +110,127 @@
                                             <div class="table-wrap mb-20">
                                                 <div class="table-responsive">
                                                     <table class="table rounded table-light table-bordered mb-0">   
-                                                        <thead class="thead-light">
-                                                            <tr>
-                                                                <th style="background-color: #132649;" class="text-white"><i class="ti-arrow-circle-right"></i>&nbsp;&nbsp;Core Python</th>
-                                                                <th style="background-color: #132649;" class="text-white"><i class="ion ion-md-arrow-dropright-circle"></i> Lessons</th>
-                                                            </tr>
-                                                        </thead>
+                                                       
                                                         <tbody>
-                                                            <!-- Your table rows -->
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <a class="video-link" href="#" data-video-src="6i3EGqOBRiU" data-video-time="0" style="text-decoration: none;">
-                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. Introduction to Python
-                                                                    </a>
-                                                                </th>
-                                                                <td><h6 class="ps-3 text-primary">3:34</td></tr>  
-                                                            </tr>
-                                                            <!-- Add more rows with different video IDs and start times -->
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <a class="video-link" href="#" data-video-src="La1BdF_sunw" data-video-time="0" style="text-decoration: none;">
-                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Download and Install Python
-                                                                    </a>
-                                                                </th>
-                                                                <td><h6 class="ps-3 text-primary">13:58</td></tr>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="6Nu9cvINQLk" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 3.print function& string cancatination </th></a>
-                                                                <td><h6 class="ps-3 text-primary">8.30</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="a43BIxiZ5EM" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 4.Variables </th></a>
-                                                                <td><h6 class="ps-3 text-primary">15:10</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Vn4RuZ4Y2M0" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 5.Variables Naming Rules </th></a>
-                                                                <td><h6 class="ps-3 text-primary">8:25</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="TTepNRy0wj8" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 6.Datatypes </th></a>
-                                                                <td><h6 class="ps-3 text-primary">23:54</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="kvVPeBBZdtM" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 7.Arthmetic Operators </th></a>
-                                                                <td><h6 class="ps-3 text-primary">15:01</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="ELNIUknegOE" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Assignment Operators </th></a>
-                                                                <td><h6 class="ps-3 text-primary">14:16</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="XbjQ-heGd58" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 9.Bitwise Operators </th></a>
-                                                                <td><h6 class="ps-3 text-primary">17:11</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="BG3lg589HRE" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 10.Identity Operators </th></a>
-                                                                <td><h6 class="ps-3 text-primary">20:27</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="MHl0Jj15crA" data-video-time="0" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Membership Operators </th></a>
-                                                                <td><h6 class="ps-3 text-primary">9:27</td>  
-                                                            </tr>
-                                                            <!-- Add more rows with different video start times -->
-                                                            <!-- Repeat this pattern for all Core Python videos -->
+                                                            <div class="accordion" id="accordion_1">
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between" >
+                                                                        <a role="button" data-toggle="collapse" href="#collapse_1" aria-expanded="false" class="collapsed">Introduction</a>
+                                                                    </div>
+                                                                    <div id="collapse_1" class="collapse" data-parent="#accordion_1" role="tabpanel" style="">
+                                                                        <div class="card-body pa-15 m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="6i3EGqOBRiU" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. Introduction to Python
+                                                                                    </a>
+                                                                                    <h6 class="ps-3 text-primary">3:34</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="La1BdF_sunw" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Download and Install Python
+                                                                                    </a>
+                                                                                    <h6 class="ps-3 text-primary">13:58</h6>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_2" aria-expanded="false">Print Function and String Concatination</a>
+                                                                    </div>
+                                                                    <div id="collapse_2" class="collapse" data-parent="#accordion_1">
+                                                                        <div class="card-body m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="6Nu9cvINQLk" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 3.Print Function and String Concatination</a>
+                                                                                    <h6 class="ps-3 text-primary">3:34</h6>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_3" aria-expanded="false">Variables</a>
+                                                                    </div>
+                                                                    <div id="collapse_3" class="collapse" data-parent="#accordion_1">
+                                                                        <div class="card-body m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="a43BIxiZ5EM" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 4.Variables</a>
+                                                                                        <h6 class="ps-3 text-primary">15:10</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                   <a class="video-link" href="#" data-video-src="Vn4RuZ4Y2M0" data-video-time="0" style="text-decoration: none;">
+                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 5.Variables Naming Rules </a>
+                                                                                        <h6 class="ps-3 text-primary">8:25</h6>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_4" aria-expanded="false">DataTypes</a>
+                                                                    </div>
+                                                                    <div id="collapse_4" class="collapse" data-parent="#accordion_1">
+                                                                        <div class="card-body p-0 m-0 ">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="TTepNRy0wj8" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 6.Datatypes </a>
+                                                                                        <h6 class="ps-3 text-primary">23:54</h6>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_5" aria-expanded="false">Operators</a>
+                                                                    </div>
+                                                                    <div id="collapse_5" class="collapse" data-parent="#accordion_1">
+                                                                        <div class="card-body pa-15 m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="kvVPeBBZdtM" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 7.Arithmetic Operators 
+                                                                                    </a>
+                                                                                        <h6 class="ps-3 text-primary">15:01</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="ELNIUknegOE" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 8.Assignment Operators</a>
+                                                                                        <h6 class="ps-3 text-primary">14:16</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="XbjQ-heGd58" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 9.Bitwise Operators </a>
+                                                                                        <h6 class="ps-3 text-primary">17:11</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="BG3lg589HRE" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 10.Identity Operators </a>
+                                                                                        <h6 class="ps-3 text-primary">20:27</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="MHl0Jj15crA" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 11.Membership Operators </a>
+                                                                                        <h6 class="ps-3 text-primary">9:27</h6>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </tbody>
+                                                        
                                                     </table>
                                                 </div>
                                             </div>
@@ -196,73 +244,123 @@
                                             <div class="table-wrap mb-20">
                                                 <div class="table-responsive">
                                                     <table class="table table-light table-bordered mb-0">   
-                                                        <thead class="thead-light">
-                                                            <tr>
-                                                                <th style="background-color: #132649; border: none;" class="text-white"><i class="ti-arrow-circle-right"></i>&nbsp;&nbsp;Advanced Python</th>
-                                                                <th style="background-color: #132649; border: none;" class="text-white"><i class="ion ion-md-arrow-dropright-circle"></i> Lessons</th>
-                                                            </tr>
-                                                        </thead>
+                                                     
                                                         <tbody>
-                                                            <!-- Your table rows -->
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <a class="video-link" href="#" data-video-src="Ic7ZBKqkS1E" data-video-time="0" style="text-decoration: none;">
-                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. OOPs
-                                                                    </a>
-                                                                </th>
-                                                                <td><h6 class="ps-3 text-primary">22:24</td></tr>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">
-                                                                    <a class="video-link" href="#" data-video-src="Gvm2Sg1rZek" data-video-time="0" style="text-decoration: none;">
-                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Class Object
-                                                                    </a>
-                                                                </th>
-                                                                <td><h6 class="ps-3 text-primary">17:06</td></tr>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="tJNsmm7ZUmk" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 3.class Methods </th>
-                                                                <td><h6 class="ps-3 text-primary">20:49</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="4SO3sScshvA" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 4.Inheritance </th>
-                                                                <td><h6 class="ps-3 text-primary">27:20</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Smlbgao6VL4" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 5.Mutiple Inheritance </th>
-                                                                <td><h6 class="ps-3 text-primary">27:46</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Fv1xFd3LzJo" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 6.Multilevel Inheritance </th>
-                                                                <td><h6 class="ps-3 text-primary">21:11</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="UYxJBJQZU-I" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 7.Hierarchical Inheritance </th>
-                                                                <td><h6 class="ps-3 text-primary">17:08</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="E6aDQWX-ASc" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 8.Hybrid Inheritance </th>
-                                                                <td><h6 class="ps-3 text-primary">10:45</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="Sx1Hjr67xO0" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 9.File Handling </th>
-                                                                <td><h6 class="ps-3 text-primary">45:32</td>  
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row"><a class="video-link" href="#" data-video-src="64tJdFVh1Vs" data-video-time="0m0s" style="text-decoration: none;">
-                                                                    <i class="ion ion-md-arrow-dropright-circle"></i> 10.Abstract Class & Abstract Method </th>
-                                                                <td><h6 class="ps-3 text-primary">26:38</td>  
-                                                            </tr>
-                                                            <!-- Add more rows with different video start times -->
-                                                            <!-- Repeat this pattern for all Advanced Python videos -->
+                                                            <div class="accordion" id="accordion_2">
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between" >
+                                                                        <a role="button" data-toggle="collapse" href="#collapse_6" aria-expanded="false" class="collapsed">OOPs</a>
+                                                                    </div>
+                                                                    <div id="collapse_6" class="collapse" data-parent="#accordion_2" role="tabpanel">
+                                                                        <div class="card-body pa-15 m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="Ic7ZBKqkS1E" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 1. OOPs
+                                                                                    </a>
+                                                                                    <h6 class="ps-3 text-primary">22:24</h6>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_7" aria-expanded="false">Class</a>
+                                                                    </div>
+                                                                    <div id="collapse_7" class="collapse" data-parent="#accordion_2">
+                                                                        <div class="card-body m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="Gvm2Sg1rZek" data-video-time="0" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 2. Class Object
+                                                                                    </a>
+                                                                                    <h6 class="ps-3 text-primary">17:06</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="tJNsmm7ZUmk" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 3. Class Methods</a> 
+                                                                                    <h6 class="ps-3 text-primary">20:49</h6>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_8" aria-expanded="false">Types of Inheritance</a>
+                                                                    </div>
+                                                                    <div id="collapse_8" class="collapse" data-parent="#accordion_2">
+                                                                        <div class="card-body m-0 p-0">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="4SO3sScshvA" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 4. Inheritance</a>
+                                                                                        <h6 class="ps-3 text-primary">27:20</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="Smlbgao6VL4" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 5. Mutiple Inheritance</a>
+                                                                                        <h6 class="ps-3 text-primary">27:46</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="Fv1xFd3LzJo" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 6. Multilevel Inheritance</a>
+                                                                                        <h6 class="ps-3 text-primary">21:11</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="UYxJBJQZU-I" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 7. Hierarchical Inheritance</a>
+                                                                                        <h6 class="ps-3 text-primary">17:08</h6>
+                                                                                </li>
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="E6aDQWX-ASc" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 8. Hybrid Inheritance</a>
+                                                                                        <h6 class="ps-3 text-primary">10:45</h6>
+                                                                                </li>
+                                                                               
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_9" aria-expanded="false">File Handling</a>
+                                                                    </div>
+                                                                    <div id="collapse_9" class="collapse" data-parent="#accordion_2">
+                                                                        <div class="card-body p-0 m-0 ">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="Sx1Hjr67xO0" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 9. File Handling</a>
+                                                                                        <h6 class="ps-3 text-primary">45:32</h6>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-header d-flex justify-content-between">
+                                                                        <a class="collapsed" role="button" data-toggle="collapse" href="#collapse_10" aria-expanded="false">Abstract Class and Abstract Method</a>
+                                                                    </div>
+                                                                    <div id="collapse_10" class="collapse" data-parent="#accordion_2">
+                                                                        <div class="card-body p-0 m-0 ">
+                                                                            <ul class="list-group-flush mb-0">
+                                                                                <li class="list-group-item d-flex justify-content-between">
+                                                                                    <a class="video-link" href="#" data-video-src="64tJdFVh1Vs" data-video-time="0m0s" style="text-decoration: none;">
+                                                                                        <i class="ion ion-md-arrow-dropright-circle"></i> 10.Abstract Class & Abstract Method</a>
+                                                                                        <h6 class="ps-3 text-primary">26:38</h6>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                            </div>
                                                         </tbody>
+                                                        
                                                     </table>
                                                 </div>
                                               </div> 
@@ -281,7 +379,9 @@
 
 
 <br>
+<script>
 
+</script>
 
 
 

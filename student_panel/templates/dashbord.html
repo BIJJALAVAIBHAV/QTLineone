@@ -2,20 +2,20 @@
 
 {% block content %}
 <style>
-    .mybody p {
+    /* .mybody p {
         height: 30px;
     }
 
     .mybody h5 {
         height: 55px;
-    }
+    } */
    
 </style>
 
 <div class="container-fluid mt-4">
     <div class="row">
         <div class="col-lg-3 col-md-6">
-            <div class="card cards card-sm shadow" style="border-radius: 5px;">
+            <div class="card cards card-sm shadow" style="border-radius: 5px; ">
                 <div class="card-body ">
                     <div class="d-flex justify-content-between mb-3">
                         <div>
@@ -116,31 +116,47 @@
                 <div class="row mb-3 ">
         
                     <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card cards m-3 shadow ">
+                        <div class="card w-100 cards shadow ">
                             <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
                             <div class="card-body mybody">
-                                <h5 class="card-title">Python For Beginners</h5>
-                                <p class="card-text text-info">2 days left</p>
+                                <div>
+                                    <h5 class="card-title">Python Programming</h5>
+                                </div>
+                                <div>
+                                    <span>Level: <span class="text-info">Beginner</span></span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="card-text text-info">2 days left</span>
+
+                                </div>
                             </div>
-                            <hr class="p-0 w-75 m-auto">
-                            <div class="card-footer" style="border: none;">
-                                <a href="{% url 'my_course_video1'%}" class="p-0 mt-2 text-primary float-start" style="text-decoration: none">Continue Watching
-                                    &nbsp;
+                            <!-- <hr class="p-0 w-75 m-auto"> -->
+                            <div class="card-footer">
+                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">Continue Watching
+                                    
                                 </a>
                             </div>
                         </div>
                     </div>
             
                     <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card cards m-3 shadow">
+                        <div class="card w-100 cards  shadow">
                             <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
                             <div class="card-body mybody">
-                                <h5 class="card-title">Web Development For Beginners</h5>
-                                <p class="card-text text-danger">Expired</p>
+                                <div>
+                                    <h5 class="card-title">Web Development</h5>
+                                </div>
+                                <div>
+                                    <span>Level: <span class="text-info">Beginner</span></span>
+                                </div>
+                                <div class="mt-2">
+                                    <span class="card-text text-danger">Expired</span>
+
+                                </div>
                             </div>
-                            <hr class="p-0 w-75 m-auto">
-                            <div class="card-footer" style="border: none;">
-                                <a href="" class="p-0 mt-2 text-primary float-start" style="text-decoration: none">Purchase Again
+                            <!-- <hr class="p-0 w-75 m-auto"> -->
+                            <div class="card-footer">
+                                <a href="" class="mt-2 btn text-white btn-sm float-start" style="text-decoration: none; background-color: rgb(19, 38, 73) ">Purchase Again
                                     &nbsp;
                                 </a>
                             </div>
