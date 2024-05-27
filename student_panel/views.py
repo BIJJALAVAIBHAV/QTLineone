@@ -65,3 +65,18 @@ def payments(request):
     return render(request,'payments.html')
 def Invoice(request):
     return render(request,'invoice.html')
+
+def settings(request):
+    return render(request, 'settings.html')
+
+def complaints(request):
+    return render(request, 'complaints.html')
+
+def schedules(request):
+    return render(request, 'schedules.html')
+
+def placement_cell(request):
+    return render(request, 'placement_cell.html')
+
+def resources(request):
+    return render(request, 'resources.html')

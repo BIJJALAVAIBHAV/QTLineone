@@ -30,4 +30,9 @@ urlpatterns = [
     path('certificate', views.CERTIFICATE, name='certificate'),
     path('payments/', views.payments, name='payments'),
     path('invoice/',views.Invoice,name='invoice'),
+    path('settings/',views.settings,name='settings'),
+    path('complaints/',views.complaints,name='complaints'),
+    path('schedules/',views.schedules,name='schedules'),
+    path('placement_cell/',views.placement_cell,name='placement_cell'),
+    path('resources/',views.resources,name='resources'),
 ]
