@@ -13,7 +13,7 @@
 </style>
 <div class="container-fluid">
     <div class="hk-pg-header mt-4 mb-0 d-flex">
-        <h4 class="hk-pg-title"><i class="fa fa-book"></i>&nbsp;Courses</h4>
+        <h4 class="hk-pg-title"><i class="fa fa-book"></i>&nbsp;My Courses</h4>
         <form>
             <div class="input-group">
                 <input class="form-control" type="search" placeholder="Search" aria-label="Search">
@@ -29,28 +29,23 @@
     </div>
     <section class="hk-sec-wrapper m-0">
         <div class="row">
+            
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="card w-100 cards shadow ">
                     <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                    <div class="card-body mybody">
+                    <div class="card-body mybody px-3 py-2">
                         <div>
-                            <h5 class="card-title">Python Programming</h5>
+                            <span class="card-title pb-0" style="font-size: large;"><h5>Web Development</h5></span>
+                            <span class="card-title"><p class="p-0 m-0">Taught by: <span class="m-0 p-0 text-info">Raj Sir</span></p></span>
                         </div>
-                        <div>
-                            <span>Taught by: <span class="text-primary">Raj Sir</span></span>
-                        </div>
-                        <!-- <div>
-                            <span>Duration: <span class="text-brown">3 Months</span></span>
-                        </div> -->
-                       
                     </div>
                     <!-- <hr class="p-0 w-75 m-auto"> -->
                     <div class="card-footer d-flex justify-content-between">
                         <div class="float-start">
-                            <a href="{% url 'my_course1' %}" class="text-info mr-1" style="text-decoration: none;">View Details </a>
+                            <a href="{% url 'my_course1' %}" class="text-primary mr-1" style="text-decoration: none;">View Details </a>
                         </div>
                         <div class="float-end">
-                            <a href="{% url 'cart' %}" class="d-flex" style="text-decoration: none; color: rgb(122, 223, 200);">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
+                            <a href="{% url 'cart' %}" class="d-flex btn btn-sm" style="text-decoration: none; background-color: #132649; color: white;">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                 </div>
@@ -58,25 +53,19 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="card w-100 cards shadow ">
                     <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                    <div class="card-body mybody">
+                    <div class="card-body mybody px-3 py-2">
                         <div>
-                            <h5 class="card-title">Python Programming</h5>
+                            <span class="card-title pb-0" style="font-size: large;"><h5>Web Development</h5></span>
+                            <span class="card-title"><p class="p-0 m-0">Taught by: <span class="m-0 p-0 text-info">Raj Sir</span></p></span>
                         </div>
-                        <div>
-                            <span>Taught by: <span class="text-primary">Raj Sir</span></span>
-                        </div>
-                        <!-- <div>
-                            <span>Duration: <span class="text-brown">3 Months</span></span>
-                        </div> -->
-                       
                     </div>
                     <!-- <hr class="p-0 w-75 m-auto"> -->
                     <div class="card-footer d-flex justify-content-between">
                         <div class="float-start">
-                            <a href="{% url 'my_course1' %}" class="text-info mr-1" style="text-decoration: none;">View Details </a>
+                            <a href="{% url 'my_course1' %}" class="text-primary mr-1" style="text-decoration: none;">View Details </a>
                         </div>
                         <div class="float-end">
-                            <a href="{% url 'cart' %}" class="d-flex" style="text-decoration: none; color: rgb(122, 223, 200);">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
+                            <a href="{% url 'cart' %}" class="d-flex btn btn-sm" style="text-decoration: none; background-color: #132649; color: white;">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                 </div>
@@ -84,25 +73,39 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="card w-100 cards shadow ">
                     <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                    <div class="card-body mybody">
+                    <div class="card-body mybody px-3 py-2">
                         <div>
-                            <h5 class="card-title">Python Programming</h5>
+                            <span class="card-title pb-0" style="font-size: large;"><h5>Web Development</h5></span>
+                            <span class="card-title"><p class="p-0 m-0">Taught by: <span class="m-0 p-0 text-info">Raj Sir</span></p></span>
                         </div>
-                        <div>
-                            <span>Taught by: <span class="text-primary">Raj Sir</span></span>
-                        </div>
-                        <!-- <div>
-                            <span>Duration: <span class="text-brown">3 Months</span></span>
-                        </div> -->
-                       
                     </div>
                     <!-- <hr class="p-0 w-75 m-auto"> -->
                     <div class="card-footer d-flex justify-content-between">
                         <div class="float-start">
-                            <a href="{% url 'my_course1' %}" class="text-info mr-1" style="text-decoration: none;">View Details </a>
+                            <a href="{% url 'my_course1' %}" class="text-primary mr-1" style="text-decoration: none;">View Details </a>
                         </div>
                         <div class="float-end">
-                            <a href="{% url 'cart' %}" class="d-flex" style="text-decoration: none; color: rgb(122, 223, 200);">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
+                            <a href="{% url 'cart' %}" class="d-flex btn btn-sm" style="text-decoration: none; background-color: #132649; color: white;">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card w-100 cards shadow ">
+                    <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                    <div class="card-body mybody px-3 py-2">
+                        <div>
+                            <span class="card-title pb-0" style="font-size: large;"><h5>Web Development</h5></span>
+                            <span class="card-title"><p class="p-0 m-0">Taught by: <span class="m-0 p-0 text-info">Raj Sir</span></p></span>
+                        </div>
+                    </div>
+                    <!-- <hr class="p-0 w-75 m-auto"> -->
+                    <div class="card-footer d-flex justify-content-between">
+                        <div class="float-start">
+                            <a href="{% url 'my_course1' %}" class="text-primary mr-1" style="text-decoration: none;">View Details </a>
+                        </div>
+                        <div class="float-end">
+                            <a href="{% url 'cart' %}" class="d-flex btn btn-sm" style="text-decoration: none; background-color: #132649; color: white;">Add to Cart&nbsp;<i class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                 </div>

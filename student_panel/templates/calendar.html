@@ -1,95 +1,137 @@
 {% extends 'base.html' %}
 {% block content %}
 <!-- Container -->
-<div class="container-fluid m-0">
 
-    <!-- Title -->
-    <div class="hk-pg-header mt-3 mb-2">
-        <h4 class="hk-pg-title"><i class="fa fa-calendar"></i>&nbsp;Calendar</h4>
-    </div>
-    <!-- /Title -->
-
+<style>
+    #weekdays th{
+        color: white;
+    }
+    .table th,td,tr{
+        border: 1px solid #132649;
+    }
+    .today {
+      background-color: #bdb5b5; /* Hash color for today's date */
+    }
+</style>
+<div class="container-fluid">
     <!-- Row -->
     <div class="row">
-        <div class="col-xl-12">
-            <section class="hk-sec-wrapper">
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="table-wrap">
-                            <table id="datable_1" class="table table-hover mt-2 w-100 display pb-30 table-bordered">
-                                <thead>
-                                    <tr style="background-color: #132649;">
-                                        <th class="text-white">S.No</th>
-                                        <th class="text-white">Date</th>
-                                        <th class="text-white">Day</th>
-                                        <th class="text-white">Events</th>
-                                        <th class="text-white">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>01/04/2024</td>
-                                        <td>Monday</td>
-                                        <td>UGADI</td>
-                                        <td><span class="badge badge-warning">Holiday</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>02/04/2024</td>
-                                        <td>Tuesday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-success">Working Day</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>03/04/2024</td>
-                                        <td>Wednesday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-success">Working Day</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>04/04/2024</td>
-                                        <td>Thursday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-success">Working Day</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>05/04/2024</td>
-                                        <td>Friday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-success">Working Day</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>6</td>
-                                        <td>06/04/2024</td>
-                                        <td>Saturday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-success">Working Day</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>7</td>
-                                        <td>07/04/2024</td>
-                                        <td>Sunday</td>
-                                        <td>NO EVENT</td>
-                                        <td><span class="badge badge-warning">Holiday</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+        <div class="col-xl-12 pa-0">
+            <div class="calendar m-2">
+                <div class="row my-2 offset-md-5">
+                    <div class="col d-flex text-center">
+                        <button class="btn  btn-calendar" id="prevBtn"><i
+                                class="icon-arrow-left"></i></button>
+                        <h2 id="monthYear"></h2>
+                        <button class="btn btn-calendar" id="nextBtn"><i
+                                class="icon-arrow-right"></i></button>
                     </div>
                 </div>
-            </section>
+                <div class="row">
+                    <div class="col">
+                        <table class="table" >
+                            <thead style="background-color: #132649;">
+                                <tr id="weekdays" class="text-white"></tr>
+                            </thead>
+                            <tbody id="calendarBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- /Row -->
 
 </div>
 <!-- /Container -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        renderCalendar();
+        document.getElementById('prevBtn').addEventListener('click', showPreviousMonth);
+        document.getElementById('nextBtn').addEventListener('click', showNextMonth);
+    });
+
+    let currentDate = new Date();
+    let contentMap = {}; // Object to store content for each date
+
+    function renderCalendar() {
+        const monthYearElement = document.getElementById('monthYear');
+        const weekdaysElement = document.getElementById('weekdays');
+        const calendarBodyElement = document.getElementById('calendarBody');
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+        // Set month and year in the header
+        monthYearElement.textContent = months[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
+
+        // Populate weekdays
+        let weekdaysHTML = '';
+        for (let day of days) {
+            weekdaysHTML += `<th>${day}</th>`;
+        }
+        weekdaysElement.innerHTML = weekdaysHTML;
+
+        // Populate dates
+        let calendarHTML = '';
+        const firstDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+        const startingDay = firstDayOfMonth.getDay();
+        const numDaysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            calendarHTML += '<tr>';
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < startingDay) {
+                    calendarHTML += '<td></td>';
+                } else if (date > numDaysInMonth) {
+                    break;
+                } else {
+                    const cellDate = `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${date}`;
+                    const content = contentMap[cellDate] || '';
+                    const todayClass = isToday(currentDate.getFullYear(), currentDate.getMonth(), date) ? 'today' : '';
+                    calendarHTML += `<td data-date="${cellDate}" class="editable ${todayClass}">${date}<br><div contenteditable="true">${content}</div></td>`;
+                    date++;
+                }
+            }
+            calendarHTML += '</tr>';
+        }
+        calendarBodyElement.innerHTML = calendarHTML;
+
+        // Add event listeners to editable cells
+        const editableCells = document.querySelectorAll('.editable');
+        editableCells.forEach(cell => {
+            cell.addEventListener('click', function () {
+                clearAllEditableCells();
+                this.querySelector('div').focus();
+            });
+            cell.querySelector('div').addEventListener('input', function () {
+                const date = cell.dataset.date;
+                contentMap[date] = this.innerText;
+            });
+        });
+    }
+
+    function showPreviousMonth() {
+        currentDate.setMonth(currentDate.getMonth() - 1);
+        renderCalendar();
+    }
+
+    function showNextMonth() {
+        currentDate.setMonth(currentDate.getMonth() + 1);
+        renderCalendar();
+    }
+
+    function clearAllEditableCells() {
+        const editableCells = document.querySelectorAll('.editable');
+        editableCells.forEach(cell => {
+            cell.querySelector('div').innerText = '';
+        });
+    }
+
+    function isToday(year, month, day) {
+        const today = new Date();
+        return today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
+    }
+</script>
 
 {% endblock %}

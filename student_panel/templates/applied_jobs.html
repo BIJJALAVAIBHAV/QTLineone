@@ -55,40 +55,109 @@
                     </div>
                 </div>
                 <div class="col-lg-12">
-                    <div class="button-list">
-                        <a href="{% url 'jobs' %}" class="btn btn-light btn-wth-icon icon-wthot-bg btn-rounded"><span
-                                class="btn-text">Matched Jobs</span><span class="icon-label"><i
-                                    class="icon ion-md-mail"></i> </span></a>
+                    <div class="button-list ">
+                        <a href="{% url 'jobs' %}" class="btn btn-light icon-wthot-bg btn-rounded"><span
+                                class="btn-text">Matched Jobs</span>&nbsp;<span class="icon-label badge bg-info text-white">40</span></a>
                         <a href="{% url 'applied_jobs' %}"
-                            class="btn btn-light btn-wth-icon icon-wthot-bg btn-rounded"><span class="btn-text">Applied
-                                Jobs</span><span class="icon-label"><i class="icon ion-md-mail"></i> </span></a>
-                        <a href="{% url 'qualified_jobs' %}"
-                            class="btn btn-light btn-wth-icon icon-wthot-bg btn-rounded"><span
-                                class="btn-text">Qualified Jobs</span><span class="icon-label"><i
-                                    class="icon ion-md-mail"></i> </span></a>
+                            class="btn btn-light icon-wthot-bg btn-rounded"><span class="btn-text">Applied
+                                Jobs</span>&nbsp;<span class="icon-label badge bg-warning">40</span></a>
+                                <a href="{% url 'qualified_jobs' %}"
+                            class="btn btn-light icon-wthot-bg btn-rounded"><span
+                                class="btn-text">Qualified Jobs</span>&nbsp;<span class="icon-label badge bg-success text-white"> 30 </span></a>
                         <!-- <a href="#" class="btn btn-icon btn-icon-circle btn-indigo btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-sky btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
-                                    <a href="#" class="btn btn-icon btn-icon-circle btn-purple btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a> -->
-                    </div>
+                            <a href="#" class="btn btn-icon btn-icon-circle btn-sky btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                            <a href="#" class="btn btn-icon btn-icon-circle btn-purple btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a> -->
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 
-
+    
     <div class="container-fluid m-0">
         <div class="hk-pg-header mb-2 mt-3">
             <h4 class="hk-pg-title">Applied Jobs</h4>
         </div>
+        <!-- Data table starts here -->
         <section class="hk-sec-wrapper">
-
+            <div class="row">
+                <div class="col-xl-12">
+                    <section class="hk-sec-wrapper">
+                        <div class="row">
+                            <div class="col-sm">
+                                <div class="table-wrap">
+                                    <table id="datable_1" class="table table-hover mt-2 w-100  pb-30 table-bordered">
+                                        <thead class="text-center">
+                                            <tr style="background-color: #132649;">
+                                                <th class="text-white">S.No</th>
+                                                <th class="text-white">Job Title</th>
+                                                <th class="text-white">Company</th>
+                                                <th class="text-white">Skills</th>
+                                                <th class="text-white">Location</th>
+                                                <th class="text-white">Applied On</th>
+                                                <th class="text-white">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="text-center">
+                                            <tr>
+                                               <td>1</td>
+                                               <td><a href="{% url 'job_details' %}">Python Developer</a></td>
+                                               <td>Infosys</td>
+                                               <td>Python, Django, HTML, CSS, JavaScript</td>
+                                               <td>Hyderabad</td>
+                                               <td>15/05/2024</td>
+                                               <td class="text-success">Qualified</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                               <td>2</td>
+                                               <td><a href="{% url 'job_details' %}">Django Developer</a></td>
+                                               <td>Infosys</td>
+                                               <td>Python, Django, HTML, CSS, JavaScript</td>
+                                               <td>Hyderabad</td>
+                                               <td>15/05/2024</td>
+                                               <td class="text-success">Qualified</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                               <td>3</td>
+                                               <td><a href="{% url 'job_details' %}">Web Developer</a></td>
+                                               <td>Infosys</td>
+                                               <td>HTML, CSS, JavaScript</td>
+                                               <td>Hyderabad</td>
+                                               <td>16/05/2024</td>
+                                               <td class="text-red">Not Qualified</td>
+                                            </tr>
+                                           
+                                            <tr>
+                                               <td>4</td>
+                                               <td><a href="{% url 'job_details' %}">React JS Developer</a></td>
+                                               <td>Infosys</td>
+                                               <td>HTML, CSS, JavaScript, React JS</td>
+                                               <td>Hyderabad</td>
+                                               <td>17/05/2024</td>
+                                               <td class="text-red">NotQualified</td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+        <!-- Data table ends here -->
+        <!-- <section class="hk-sec-wrapper"> -->
+            
             <!-- <br> -->
             <!-- available_jobs -->
             <!-- <h5 class="hk-sec-title" id="available_jobs">Applied Jobs</h5> -->
             <!-- <p class="mb-25"> Suggested Jobs are based on your profile and assessments completed </p> -->
 
-            <div class="row">
-                <div class="col border-0">
+            <!-- <div class="row">
+                <div class="col border-0"> -->
                     <!-- <div class="media pa-20 border  border-2  rounded-30 mb-20 ">
                         <img class="align-self-start mr-5 circle d-66" src="../../static/images/logo/qt_instance.png" alt="Generic placeholder image">
                         <div class="media-body ">
@@ -107,7 +176,7 @@
                            <p>Applied on 30 March 2024 </p>
                         </div>
                     </div> -->
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm ">
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 col-sm-12 mb-30">
@@ -121,7 +190,7 @@
                                                 <h4 class="ml-2 mt-3">SDE-1
                                             </a></h4>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body px-3 py-2">
                                             <h5 class="card-title">QT lines, &nbsp;<i
                                                     class="fa fa-map-marker"></i>&nbsp;Hyderabad</h6>
                                             </h5>
@@ -133,7 +202,7 @@
                                                     JavaScript</span>
                                             </p>
                                         </div>
-                                        <div class="card-footer d-inline-block">
+                                        <div class="card-footer d-flex justify-content-between">
                                             <p class="m-0"><span class="text-info">Applied on 10 April 2024</span></p>
                                             <p class="m-0">Status : <span class="text-danger">Not Qualified</span></p>
                                         </div>
@@ -150,7 +219,7 @@
                                                 <h4 class="ml-2 mt-3">Python Developer
                                             </a></h4>
                                         </div>
-                                        <div class="card-body">
+                                        <div class="card-body px-3 py-2">
                                             <h5 class="card-title">TestPress, &nbsp;<i
                                                     class="fa fa-map-marker"></i>&nbsp;Chennai</h6>
                                             </h5>
@@ -164,7 +233,7 @@
 
 
                                         </div>
-                                        <div class="card-footer d-inline-block">
+                                        <div class="card-footer d-flex justify-content-between">
                                             <p class="m-0"><span class="text-info">Applied on 10 April 2024</span></p>
                                             <p class="m-0">Status : <span class="text-success">Qualified</span></p>
                                         </div>
@@ -172,7 +241,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- <div class="media pa-20 border border-2 border-light rounded mb-20">
                         <img class="align-self-center mr-15 circle d-66" src="dist/img/avatar9.jpg" alt="Generic placeholder image">
@@ -188,7 +257,7 @@
                             <p class="">Libero justo laoreet sit amet cursus. In aliquam sem fringilla ut. Donec adipiscing tristique risus nec feugiat in fermentum. In egestas erat imperdiet sed euismod. Sit amet facilisis magna etiam tempor orci eu. A pellentesque sit amet porttitor. Nulla facilisi cras fermentum odio eu feugiat pretium nibh. At lectus urna duis convallis convallis tellus. Vel turpis nunc eget lorem dolor sed viverra.</p>
                         </div>
                     </div> -->
-                </div>
+                <!-- </div>
             </div>
             <div class="offset-4">
                 <nav class="pagination-wrap d-inline-block  mr-40 mt-15" aria-label="...">
@@ -209,9 +278,9 @@
                         </li>
                     </ul>
                 </nav>
-            </div>
+            </div> -->
 
-        </section>
+        <!-- </section> -->
     </div>
 
 

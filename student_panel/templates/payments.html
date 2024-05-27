@@ -8,10 +8,10 @@
     <div>
 
         <nav class="navbar mt-3 mb-2 ">
-            <h4><i class="fa fa-bank"></i>&nbsp;Payments</h4>
+            <h4><i class="fa fa-bank"></i>&nbsp;Payment History</h4>
             <ul class=" nav justify-content-end float-right">
                 <li class="breadcrumb-item">
-                    <a class="" aria-current="page" href="">Payment Info</a>
+                    <a class="" aria-current="page" href="">Payment History</a>
                 </li>
                 <li class="breadcrumb-item">
                     <a class="" href="">Course Payment</a>
@@ -31,39 +31,42 @@
                     <div class="col-sm-12">
                         <div class="table-wrap">
                             <!--                                        <div class="table-responsive">-->
-                            <table id="datable_1" class="table table-hover  display pb-30 mt-2  table-bordered">
+                            <table id="datable_1" class="table  display pb-30 mt-2  table-bordered">
                                 <thead>
-                                    <tr style="background-color: #132649;">
+                                    <tr style="background-color: #132649;" class="text-center">
                                         <th class="text-white">S.No</th>
                                         <th class="text-white">FullName</th>
                                         <th class="text-white">Email</th>
                                         <th class="text-white">course</th>
                                         <th class="text-white">Amount</th>
-                                        <th class="text-white">mode</th>
+                                        <th class="text-white">Paid</th>
+                                        <th class="text-white">Pending</th>
+                                        <th class="text-white"> Payment Mode</th>
                                         <th class="text-white">receipt</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody class="text-center">
+                                    <tr >
                                         <td>1</td>
                                         <td>chevuri Anitha</td>
                                         <td>anithach@gmail.com</td>
                                         <td>Python Full Stack</td>
-                                        <td>25000</td>
+                                        <td class="text-primary">25000</td>
+                                        <td class="text-success">15000</td>
+                                        <td class="text-red">10000</td>
                                         <td>Cash</td>
-                                        <td>
-                                            <ul><a href="{% url 'invoice' %}"><i class="icon" data-icon="y"></i></a>
-                                            </ul>
-                                        </td>
+                                        <td class="text-center"><a href="{% url 'invoice' %}"><i class="icon" data-icon="y"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td>sunchi Sharanya</td>
                                         <td>sunchi@gmail.com</td>
                                         <td>Java Full Stack</td>
-                                        <td>25000</td>
+                                        <td class="text-primary">25000</td>
+                                        <td class="text-success">10000</td>
+                                        <td class="text-red">15000</td>
                                         <td>Cash</td>
-                                        <td><a href="{% url 'invoice' %}"><i class="icon" data-icon="y"></i></a></td>
+                                        <td class="text-center"><a href="{% url 'invoice' %}"><i class="icon" data-icon="y"></i></a></td>
                                     </tr>
                                 </tbody>
 

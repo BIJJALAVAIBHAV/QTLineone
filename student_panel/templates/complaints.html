@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<style>
+    .table th{
+        color: white;
+    }
+</style>
+<!-- Container -->
+<div class="container-fluid m-0">
+
+    <!-- Title -->
+    <div class="hk-pg-header mt-3 mb-2">
+        <h4 class="hk-pg-title">Complaints</h4>
+    </div>
+    <!-- /Title -->
+
+    <!-- Row -->
+    <div class="row">
+        <div class="col-xl-12">
+            <section class="hk-sec-wrapper">
+                <button class="btn mb-3" style="background-color: #132649; color: white;" data-toggle="modal"
+                data-target="#complaint">New Complaint
+                <!-- <i class="fa fa-rocket"></i> -->
+            </button>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="table-wrap">
+                            <table id="datable_1" class="table table-hover   mt-2 w-100  pb-30 table-bordered">
+                                <thead class="text-center" >
+                                    <tr style="background-color: #132649; ">
+                                        <th>S.No</th>
+                                        <th>Complaint ID</th>
+                                        <th>Subject</th>
+                                        <th>Complaint Description</th>
+                                        <!-- <th>Reason</th> -->
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>234</td>
+                                        <td>Placement Team</td>
+                                        <td>
+                                            <a href="javascript:void(0);" data-toggle="modal" data-target="#complaintDetails">Elijah</a>
+                                        </td>
+                                        <!-- <td>-</td> -->
+                                        <td>15/04/2024</td>
+                                        <td ><span class="badge badge-success p-2">Solved</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>2</td>
+                                        <td>245</td>
+                                        <td>Faculty</td>
+                                        <td><a href="javascript:void(0);" data-toggle="modal" data-target="#complaintDetails">Demon</a></td>
+                                        <!-- <td>-</td> -->
+                                        <td>16/04/2024</td>
+                                        <td><span  class="badge badge-danger p-2">Not Resolved</span></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>3</td>
+                                        <td>267</td>
+                                        <td>Faculty</td>
+                                        <td><a href="javascript:void(0);" data-toggle="modal" data-target="#complaintDetails">Stefan</a></td>
+                                        <!-- <td>-</td> -->
+                                        <td>17/04/2024</td>
+                                        <td><span  class="badge badge-danger p-2">Not Resolved</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>269</td>
+                                        <td>Placement Team</td>
+                                        <td><a href="javascript:void(0);" data-toggle="modal" data-target="#complaintDetails">Klaus</a></td>
+                                        <!-- <td>-</td> -->
+                                        <td>18/04/2024</td>
+                                        <td><span  class="badge badge-danger p-2">Not Resolved</span></td>
+                                    </tr>
+                                    
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- /Row -->
+
+</div>
+
+<!-- Container -->
+
+<!-- Modal for Complainting starts here -->
+<div class="modal fade" id="complaint" tabindex="-1" role="dialog" aria-labelledby="complaint"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #132649;">
+                <h5 class="modal-title text-white">Report a Complaint</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="slot_add" method="post" action="#">
+                {% csrf_token %}
+                <div class="modal-body">
+                    <div class="mb-2">
+                        <label for="" class="form-label">Subject :</label>
+                        <select name="subject" id="compliant_on" class="form-control">
+                            <option value="0">....Select your option....</option>
+                            <option value="1">Placement Feedback</option>
+                            <option value="2">Faculty Feedback</option>
+                        </select>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Complaint Description :</label>
+                        <input type="text" class="form-control" placeholder="Enter the Name" name="name" id="name" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Reason :</label>
+                        <textarea name="reason" id="reason" class="form-control"></textarea>
+                    </div>
+                </div>    
+                <div class="modal-footer d-flex justify-content-center py-2 p-0">
+                    <button type="submit" class="btn" style="background-color: #132649; color: white;">Submit</button>
+                    <button type="reset" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal for Complainting ends here -->
+
+<!-- Modal for Complaint Details starts here -->
+
+<div class="modal fade" id="complaintDetails" tabindex="-1" role="dialog" aria-labelledby="complaint"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #132649;">
+                <h5 class="modal-title text-white">Complaint Details</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-0">
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Complaint ID :</th>
+                            <td>234</td>
+                        </tr>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Subject :</th>
+                            <td>Placement Team</td>
+                        </tr>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Complaint Description :</th>
+                            <td>Elijah</td>
+                        </tr>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Reason :</th>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quis, earum est neque atque voluptatibus a delectus, ipsa, enim veritatis voluptatum officiis ipsam quas.</td>
+                        </tr>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Date :</th>
+                            <td>15/04/2024</td>
+                        </tr>
+                        <tr>
+                            <th class="col-3" style="color: #132649;">Status :</th>
+                            <td><span class="badge badge-success p-2">Resolved</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Complaint Details ends here -->
+{% endblock %}

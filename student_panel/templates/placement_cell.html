@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+    <div class="hk-pg-header mb-2 mt-3">
+        <h4 class="hk-pg-title">Placement Cell</h4>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 ">
+            <a href="{% url 'applied_jobs' %}">
+                <div class="card shadow card-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <span class="d-block pt-2 font-15 text-dark font-weight-500">APPLIED JOBS</span>
+                        <span class="text-primary" style="font-size: 25px;"><i class="fa fa-user"></i></span>
+                    </div>
+                    <span class="px-3">
+                        <p class="badge badge-primary">120</p>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 ">
+            <a href="{% url 'jobs' %}">
+                <div class="card shadow card-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <span class="d-block pt-2 font-15 text-dark font-weight-500">ELIGIBLE JOBS</span>
+                        <span class="text-secondary" style="font-size: 25px;"><i class="fa fa-user"></i></span>
+                    </div>
+                    <span class="px-3">
+                        <p class="badge badge-secondary">60</p>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 ">
+            <a href="{% url 'qualified_jobs' %}">
+                <div class="card shadow card-sm">
+                    <div class="card-body d-flex justify-content-between">
+                        <span class="d-block pt-2 font-15 text-dark font-weight-500">IN PROGRESS</span>
+                        <span class="text-warning" style="font-size: 25px;"><i class="fa fa-user"></i></span>
+                    </div>
+                    <span class="px-3">
+                        <p class="badge badge-warning">10</p>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="col-lg-3 ">
+            <div class="card shadow card-sm">
+                <div class="card-body d-flex justify-content-between">
+                    <span class="d-block pt-2 font-15 text-dark font-weight-500">PLACED</span>
+                    <span class="text-success" style="font-size: 25px;"><i class="fa fa-user"></i></span>
+                </div>
+                <span class="px-3">
+                    <p class="badge badge-success">1</p>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<div class="container-fluid m-0">
+    <div class="hk-pg-header mt-3 mb-2">
+        <h4 class="hk-pg-title">Latest Jobs</h4>
+    </div>
+    <section class="hk-sec-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-wrap">
+                    <table id="datable_1" class=" table table-hover display pb-30 w-100 table-bordered">
+                        <thead style="background-color: #132649; color: white;">
+                            <tr class="text-center">
+                                <th class="text-white">ID</th>
+                                <th class="text-white">title</th>
+                                <th class="text-white">Company Name</th>
+                                <th class="text-white">Location</th>
+                                <th class="text-white">Category</th>
+                                <th class="text-white">Experience</th>
+
+                                <th class="text-white">Last Date to apply</th>
+                                <th class="text-white text-center">Applied / Eligible / In Progress / Placed</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="text-center">
+                                <td>1</td>
+                                <td><a href="{% url 'job_details' %}">Python Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Secunderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <td class="text-center">
+                                    <a href="{% url 'jobgalleryapplied' %}"><i
+                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                    <a href="{% url 'jobgalleryeligible' %}"><i
+                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                    <a href="{% url 'jobgalleryinprogress' %}"><i
+                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                    <a href="{% url 'jobgalleryplaced' %}"><i
+                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>2</td>
+                                <td><a href="{% url 'job_details' %}">Web Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <td class="text-center">
+                                    <a href="{% url 'jobgalleryapplied' %}"><i
+                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                    <a href="{% url 'jobgalleryeligible' %}"><i
+                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                    <a href="{% url 'jobgalleryinprogress' %}"><i
+                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                    <a href="{% url 'jobgalleryplaced' %}"><i
+                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>3</td>
+                                <td><a href="{% url 'job_details' %}" >MERN Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <td class="text-center">
+                                    <a href="{% url 'jobgalleryapplied' %}"><i
+                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                    <a href="{% url 'jobgalleryeligible' %}"><i
+                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                    <a href="{% url 'jobgalleryinprogress' %}"><i
+                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                    <a href="{% url 'jobgalleryplaced' %}"><i
+                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>4</td>
+                                <td><a href="{% url 'job_details' %}">React Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <td class="text-center">
+                                    <a href="{% url 'jobgalleryapplied' %}"><i
+                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                    <a href="{% url 'jobgalleryeligible' %}"><i
+                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                    <a href="{% url 'jobgalleryinprogress' %}"><i
+                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                    <a href="{% url 'jobgalleryplaced' %}"><i
+                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td>
+                            </tr>
+
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container-fluid m-0">
+    <div class="hk-pg-header mt-3 mb-2">
+        <h4 class="hk-pg-title mt-1">AI Reffered Jobs</h4>
+    </div>
+    <section class="hk-sec-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-wrap">
+                    <table id="datable_1" class=" table table-hover display pb-30 w-100 table-bordered">
+                        <thead style="background-color: #132649; color: white;">
+                            <tr class="text-center">
+                                <th class="text-white">ID</th>
+                                <th class="text-white">title</th>
+                                <th class="text-white">Company Name</th>
+                                <th class="text-white">Location</th>
+                                <th class="text-white">Category</th>
+                                <th class="text-white">Experience</th>
+
+                                <th class="text-white">Last Date to apply</th>
+                                <!-- <th class="text-white text-center">Applied / Eligible / In Progress / Placed</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="text-center">
+                                <td>1</td>
+                                <td><a href="{% url 'job_details' %}">Python Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Secunderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <!-- <td class="text-center">
+                                  <a href="{% url 'jobgalleryapplied' %}"><i class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                  <a href="{% url 'jobgalleryeligible' %}"><i class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                  <a href="{% url 'jobgalleryinprogress' %}"><i class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                  <a href="{% url 'jobgalleryplaced' %}"><i class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td> -->
+                            </tr>
+                            <tr class="text-center">
+                                <td>2</td>
+                                <td><a href="{% url 'job_details' %}">Web Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <!-- <td class="text-center">
+                                  <a href="{% url 'jobgalleryapplied' %}"><i class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                  <a href="{% url 'jobgalleryeligible' %}"><i class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                  <a href="{% url 'jobgalleryinprogress' %}"><i class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                  <a href="{% url 'jobgalleryplaced' %}"><i class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td> -->
+                            </tr>
+                            <tr class="text-center">
+                                <td>3</td>
+                                <td><a href="{% url 'job_details' %}" >MERN Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <!-- <td class="text-center">
+                                  <a href="{% url 'jobgalleryapplied' %}"><i class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                  <a href="{% url 'jobgalleryeligible' %}"><i class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                  <a href="{% url 'jobgalleryinprogress' %}"><i class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                  <a href="{% url 'jobgalleryplaced' %}"><i class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td> -->
+                            </tr>
+                            <tr class="text-center">
+                                <td>4</td>
+                                <td><a href="{% url 'job_details' %}">React Developer</a></td>
+                                <td>Infosys pvt lmt</td>
+                                <td>Hyderabad</td>
+                                <td>Full Time</td>
+                                <td>2 years</td>
+
+                                <td>15-05-2024</td>
+                                <!-- <td class="text-center">
+                                  <a href="{% url 'jobgalleryapplied' %}"><i class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                  <a href="{% url 'jobgalleryeligible' %}"><i class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                  <a href="{% url 'jobgalleryinprogress' %}"><i class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                  <a href="{% url 'jobgalleryplaced' %}"><i class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                </td> -->
+                            </tr>
+
+                            </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- <div class="modal fade" id="jobdescription" tabindex="-1" role="dialog" aria-labelledby="complaint" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #132649;">
+                <h5 class="modal-title text-white">Job Details - Python Developer</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                ] <h5 class="mt-3 mb-2">Skills: </h5>
+                <div>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">Python</span>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">Django</span>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">React</span>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">HTML</span>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">CSS</span>
+                    <span class="badge p-2" style="background-color: #132649; color: white;">JS</span>
+                </div>
+
+                <h5 class="mt-3 mb-2">Job Description</h5>
+                <div>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam animi neque dolor ipsa rem eaque quia
+                    ab. Rem quis doloremque ipsa incidunt aperiam perspiciatis officia rerum sit? Ad quae eum
+                    voluptates, fugiat, nesciunt distinctio repudiandae debitis voluptas quasi quia vero non hic impedit
+                    repellendus ex recusandae cum tempore rem architecto.
+                </div>
+
+                <h5>Role and Responsibilities</h5>
+                <div class="jobdescription  card-body p-0">
+                    <div class="px-4 py-1">
+                        <ul class="list-group">
+                            <li style="list-style: disc;">
+                                <p class="m-0">Create intuitive and visually appealing interfaces using HTML, CSS, and
+                                    JavaScript frameworks (e.g., React, Angular, Vue.js).</p>
+                            </li>
+                            <li style="list-style: disc;">
+                                <p class="m-0">Ensure the web application works across various devices and screen sizes.
+                                </p>
+                            </li>
+                            <li style="list-style: disc;">
+                                <p class="m-0">Improve the usability and functionality of the web application to provide
+                                    a better user experience.</p>
+                            </li>
+                            <li style="list-style: disc;">
+                                <p class="m-0">Design, manage, and query databases (SQL or NoSQL) using ORM tools like
+                                    SQLAlchemy or Django ORM.</p>
+                            </li>
+                            <li style="list-style: disc;">
+                                <p class="m-0">Set up and manage CI/CD pipelines to automate the testing and deployment
+                                    processes.</p>
+                            </li>
+                            <li style="list-style: disc;">
+                                <p class="m-0">Proficiency in Python for back-end development and JavaScript (along with
+                                    frameworks) for front-end development.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div> -->
+</div>
+{% endblock %}

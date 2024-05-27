@@ -1,30 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container m-5">
+<div class="container-fluid mt-4">
+    <div class="hk-pg-header mt-3 mb-2">
+        <h4 class="hk-pg-title"><i class="ion ion-md-appstore"></i>&nbsp;Shopping Cart</h4>
+    </div>
     <section class="hk-sec-wrapper">
         <div class="row">
+          <div class="col-xl-12">
             <section id="example-basic-p-0" role="tabpanel" aria-labelledby="example-basic-h-0" class="body current" aria-hidden="false">
-                <h3 class="display-4 mb-40">Shopping cart</h3>
                 <div class="row">
-                    <div class="col-xl-8 mb-20">
+                    <div class="card shadow col-xl-8 mb-20 p-0">
                         <div class="table-wrap">
                             <div class="table-responsive">
-                                <table class="table mb-0">
+                                <table class="table table-hover table-stripped">
                                     <tbody>
-                                        <tr>
-                                            <th colspan="2">Product</th>
-                                            <th>Price</th>
-                                            <th>Items</th>
-                                            <th>Total</th>
-                                            <th></th>
+                                        <tr class="text-center" style="background-color: #132649">
+                                            <th colspan="2" class="text-white">Product</th>
+                                            <th class="text-white">Price</th>
+                                            <th class="text-white">Items</th>
+                                            <th class="text-white">Total</th>
+                                            <th class="text-white"></th>
                                         </tr>
                                         <tr>
                                             <td><img class="w-80p" src="{% static 'img/3.jpg' %}" alt="icon"></td>
                                             <th scope="row">Apple iPhone8 - 32GB</th>
                                             <td>$1240</td>
                                             <td>
-                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;"><div class="input-group input-group-sm w-100p"><div class="input-group-prepend"><button style="min-width: 2.5em" class="btn btn-decrement btn-outline-light" type="button"><strong>-</strong></button></div><input type="text" style="text-align: center" class="form-control"><div class="input-group-append"><button style="min-width: 2.5em" class="btn btn-increment btn-outline-light" type="button"><strong>+</strong></button></div></div>
+                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;">
+                                                <div class="input-group input-group-sm w-100p">
+                                                    <div class="input-group-prepend">
+                                                        <button style="min-width: 2.5em" class="btn btn-decrement " type="button">
+                                                            <strong>-</strong></button>
+                                                    </div>
+                                                    <input type="text" style="text-align: center" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <button style="min-width: 2.5em" class="btn btn-increment " type="button">
+                                                            <strong>+</strong>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td class="text-dark">$1240</td>
                                             <td>
@@ -38,7 +53,19 @@
                                             <th scope="row">Xiaomi Redmi Note 4X - 32GB</th>
                                             <td>$124</td>
                                             <td>
-                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;"><div class="input-group input-group-sm w-100p"><div class="input-group-prepend"><button style="min-width: 2.5em" class="btn btn-decrement btn-outline-light" type="button"><strong>-</strong></button></div><input type="text" style="text-align: center" class="form-control"><div class="input-group-append"><button style="min-width: 2.5em" class="btn btn-increment btn-outline-light" type="button"><strong>+</strong></button></div></div>
+                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;">
+                                                <div class="input-group input-group-sm w-100p">
+                                                    <div class="input-group-prepend">
+                                                        <button style="min-width: 2.5em" class="btn btn-decrement " type="button">
+                                                            <strong>-</strong></button>
+                                                    </div>
+                                                    <input type="text" style="text-align: center" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <button style="min-width: 2.5em" class="btn btn-increment " type="button">
+                                                            <strong>+</strong>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td class="text-dark">$124</td>
                                             <td>
@@ -52,7 +79,19 @@
                                             <th scope="row">Smart Baby Watch Q80</th>
                                             <td>$455</td>
                                             <td>
-                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;"><div class="input-group input-group-sm w-100p"><div class="input-group-prepend"><button style="min-width: 2.5em" class="btn btn-decrement btn-outline-light" type="button"><strong>-</strong></button></div><input type="text" style="text-align: center" class="form-control"><div class="input-group-append"><button style="min-width: 2.5em" class="btn btn-increment btn-outline-light" type="button"><strong>+</strong></button></div></div>
+                                                <input type="number" class="normal" value="1" min="0" max="100" step="10" style="display: none;">
+                                                <div class="input-group input-group-sm w-100p">
+                                                    <div class="input-group-prepend">
+                                                        <button style="min-width: 2.5em" class="btn btn-decrement " type="button">
+                                                            <strong>-</strong></button>
+                                                    </div>
+                                                    <input type="text" style="text-align: center" class="form-control">
+                                                    <div class="input-group-append">
+                                                        <button style="min-width: 2.5em" class="btn btn-increment " type="button">
+                                                            <strong>+</strong>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </td>
                                             <td class="text-dark">$455</td>
                                             <td>
@@ -81,14 +120,14 @@
                         </div>
                     </div>
                     <div class="col-xl-4 mb-20">
-                        <div class="card">
-                            <h6 class="card-header border-0">
+                        <div class="card shadow w-100">
+                            <h6 class="card-header border-0" style="background-color: #132649; color: white;">
                                 <i class="ion ion-md-clipboard font-21 mr-10"></i>Summary
                             </h6>
-                            <div class="card-body pa-0">
+                            <div class="card-body px-2 py-1">
                                 <div class="table-wrap">
                                     <div class="table-responsive">
-                                        <table class="table table-sm mb-0">
+                                        <table class="table table-stripped table-hover table-sm mb-0">
                                             <tbody>
                                                 <tr>
                                                     <th class="w-70" scope="row">Sub Total</th>
@@ -125,6 +164,7 @@
                     </div>
                 </div>
             </section>
+          </div>
         </div>
     </section>
 </div>

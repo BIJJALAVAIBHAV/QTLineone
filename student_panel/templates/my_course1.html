@@ -14,6 +14,18 @@
         background-color: #132649 !important; /* Change this color to your desired color */
         color: white !important;
     }
+    .accordion .card .card-header > a{
+        background-color: #132649;
+        color: white;
+    }
+    .accordion .card .card-header > h6{
+        background-color: #132649;
+        color: white;
+    }
+    a{
+        /* background-color: #132649; */
+        color: #132649
+    }
  </style>
 
 
@@ -41,7 +53,7 @@
         </div>
         <section class="hk-sec-wrapper m-0">
             <div class="row">
-                <div class="col-xl-4" id="card-none3">              
+                <div class="col-xl-3" id="card-none3">              
                     <div class="card rounded shadow">
                         <img alt=" image cap" class="img-top img-fluid object-fit-contain border rounded" src="{% static 'img/3.jpg' %}">
                     
@@ -60,17 +72,17 @@
                                 <span><i class="ion ion-md-arrow-dropright-circle"></i> Total Topics</span>
                                 <span>37</span>
                             </li>    
-                                <div class="row">
-                                    <div class="col-sm mt-3 d-flex justify-content-center">
+                                <div class="row p-0 m-0">
+                                    <div class="col-sm m-0 py-2 d-flex justify-content-center">
                                         <a class="btn btn-sm" href="{% url 'my_course_video1'%}" style="background-color: #132649; color: white;">Start Course</a>
                                     </div>
                                 </div>
-                                <br>    
+                                   
                         </ul>
                     </div>
                 </div>  
 
-                <div class="col-xl-8">
+                <div class="col-xl-9">
                     <div class="card  ">
                         <div class="card-header glassy-shine" style="background-color: #132649;">
                         <span>
@@ -113,7 +125,7 @@
                                                        
                                                         <tbody>
                                                             <div class="accordion" id="accordion_1">
-                                                                <div class="card">
+                                                                <div class="card shadow">
                                                                     <div class="card-header d-flex justify-content-between" >
                                                                         <a role="button" data-toggle="collapse" href="#collapse_1" aria-expanded="false" class="collapsed">Introduction</a>
                                                                     </div>
@@ -124,13 +136,13 @@
                                                                                     <a class="video-link" href="#" data-video-src="6i3EGqOBRiU" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 1. Introduction to Python
                                                                                     </a>
-                                                                                    <h6 class="ps-3 text-primary">3:34</h6>
+                                                                                    <h6 class="ps-3 ">3:34</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="La1BdF_sunw" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 2. Download and Install Python
                                                                                     </a>
-                                                                                    <h6 class="ps-3 text-primary">13:58</h6>
+                                                                                    <h6 class="ps-3">13:58</h6>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
@@ -146,7 +158,7 @@
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="6Nu9cvINQLk" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 3.Print Function and String Concatination</a>
-                                                                                    <h6 class="ps-3 text-primary">3:34</h6>
+                                                                                    <h6 class="ps-3 ">3:34</h6>
                                                                                 </li>
                                                                                
                                                                             </ul>
@@ -163,12 +175,12 @@
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="a43BIxiZ5EM" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 4.Variables</a>
-                                                                                        <h6 class="ps-3 text-primary">15:10</h6>
+                                                                                        <h6 class="ps-3">15:10</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                    <a class="video-link" href="#" data-video-src="Vn4RuZ4Y2M0" data-video-time="0" style="text-decoration: none;">
                                                                     <i class="ion ion-md-arrow-dropright-circle"></i> 5.Variables Naming Rules </a>
-                                                                                        <h6 class="ps-3 text-primary">8:25</h6>
+                                                                                        <h6 class="ps-3 ">8:25</h6>
                                                                                 </li>
                                                                                
                                                                             </ul>
@@ -185,7 +197,7 @@
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="TTepNRy0wj8" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 6.Datatypes </a>
-                                                                                        <h6 class="ps-3 text-primary">23:54</h6>
+                                                                                        <h6 class="ps-3">23:54</h6>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>
@@ -202,27 +214,27 @@
                                                                                     <a class="video-link" href="#" data-video-src="kvVPeBBZdtM" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 7.Arithmetic Operators 
                                                                                     </a>
-                                                                                        <h6 class="ps-3 text-primary">15:01</h6>
+                                                                                        <h6 class="ps-3">15:01</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="ELNIUknegOE" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 8.Assignment Operators</a>
-                                                                                        <h6 class="ps-3 text-primary">14:16</h6>
+                                                                                        <h6 class="ps-3">14:16</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="XbjQ-heGd58" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 9.Bitwise Operators </a>
-                                                                                        <h6 class="ps-3 text-primary">17:11</h6>
+                                                                                        <h6 class="ps-3">17:11</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="BG3lg589HRE" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 10.Identity Operators </a>
-                                                                                        <h6 class="ps-3 text-primary">20:27</h6>
+                                                                                        <h6 class="ps-3">20:27</h6>
                                                                                 </li>
                                                                                 <li class="list-group-item d-flex justify-content-between">
                                                                                     <a class="video-link" href="#" data-video-src="MHl0Jj15crA" data-video-time="0" style="text-decoration: none;">
                                                                                         <i class="ion ion-md-arrow-dropright-circle"></i> 11.Membership Operators </a>
-                                                                                        <h6 class="ps-3 text-primary">9:27</h6>
+                                                                                        <h6 class="ps-3">9:27</h6>
                                                                                 </li>
                                                                             </ul>
                                                                         </div>

@@ -1,4 +1,8 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
 <div>
     <nav class="navbar mt-3 ">
         <h5>Profile</h5>
@@ -16,265 +20,410 @@
         </ul>
     </nav>
 </div>
-<div class="container-fluid">
+<div class="container-fluid ">
     <div class="row">
         <div class="col-xl-12 pa-0">
-            <div class="profile-cover-wrap overlay-wrap m-3 ml-3 mt-3 mb-0">
-                <div class="profile-cover-img" style="background-image: url('{% static 'dist/img/bg1.jpg' %}')"></div>
+            <div class="profile-cover-wrap overlay-wrap m-3">
+                <div class="profile-cover-img" style="background-image:url('../../static/dist/img/bg1.jpg')"></div>
                 <div class="bg-overlay bg-trans-dark-60"></div>
-                <div class="container profile-cover-content py-3 py-sm-4 py-md-5">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3 mb-md-0">
-                            <div class="media">
-                                <div class="media-img-wrap d-flex">
-                                    <div class="avatar">
-                                        <img src="{% static 'dist/img/avatar1.jpg' %}" alt="user"
-                                            class="avatar-img rounded-circle" />
-                                    </div>
-                                </div>
-                                <div class="media-body pl-3">
-                                    <div class="text-white text-capitalize display-6 font-weight-400">venkat</div>
-                                    <div class="font-14 text-white">
-                                        <span class="font-weight-500 pr-2">Admission No</span><span
-                                            class="mr-0">3413313</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="container profile-cover-content py-50">
+                    <div class="hk-row">
                         <div class="col-lg-6">
-                            <div class="button-list d-flex justify-content-lg-end">
-                                <a href="#" class="btn btn-dark btn-wth-icon icon-wthot-bg btn-rounded"
-                                    data-toggle="modal" data-target="#exampleModalCenter">
-                                    <span class="btn-text">Edit Profile</span>
-                                    <span class="icon-label"><i class="icon ion-md-mail"></i> </span>
-                                </a>
+                            <div class="media align-items-center">
+                                <div class="media-img-wrap  d-flex">
+                                    <div class="avatar">
+                                        <img src="../../static/dist/img/avatar1.jpg" alt="user"
+                                            class="avatar-img rounded-circle">
+                                    </div>
+                                </div>
+                                <div class="media-body">
+                                    <div class="text-white text-capitalize display-6 mb-1 font-weight-400">
+                                        <p class="mb-0" style="font-size: larger;">Cecilia Rios<i
+                                                class=" fa fa-check-circle-o text-primary"></i></p>
+                                        <p class="mb-0 mt-1 text-white " style="font-size: large;">
+                                            Full Stack Python Developer
+                                            <br>
+                                            Date of joining: April 8th 2024
+                                        </p>
+
+
+                                    </div>
+                                    
+                                    
+                                </div>
                             </div>
+                        
                         </div>
+                        <!-- <div class="col-lg-12">
+                            <div class="button-list ">
+                                <a href="{% url 'jobs' %}" class="btn btn-light icon-wthot-bg btn-rounded"><span
+                                        class="btn-text">Matched Jobs</span>&nbsp;<span class="icon-label badge bg-info text-white">40</span></a>
+                                <a href="{% url 'applied_jobs' %}"
+                                    class="btn btn-light icon-wthot-bg btn-rounded"><span class="btn-text">Applied
+                                        Jobs</span>&nbsp;<span class="icon-label badge bg-warning">40</span></a>
+                                <a href="{% url 'qualified_jobs' %}"
+                                    class="btn btn-light icon-wthot-bg btn-rounded"><span
+                                        class="btn-text">Qualified Jobs</span>&nbsp;<span class="icon-label badge bg-success text-white"> 30 </span></a>
+                                <!-- <a href="#" class="btn btn-icon btn-icon-circle btn-indigo btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                                            <a href="#" class="btn btn-icon btn-icon-circle btn-sky btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                                            <a href="#" class="btn btn-icon btn-icon-circle btn-purple btn-icon-style-2"><span class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a> -->
                     </div>
-                </div>
+                </div> 
             </div>
+        </div>
+    </div>
 
 
-            <div class="container-fluid ">
-                <ul class="nav nav-light nav-tabs " role="tablist">
-                    <li class="nav-item">
-                        <a href="{% url 'student_profile' %}" class="nav-link d-flex align-items-center active">
-                            <span class="d-none d-sm-block">Over View</span>
-                            <span class="d-block d-sm-none">Overview</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'my_job' %}" class="nav-link d-flex align-items-center">
-                            <span class="d-none d-sm-block">My Job</span>
-                            <span class="d-block d-sm-none">Job</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
+    <div class="container-fluid p-0">
+        <ul class="nav nav-light nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a href="#" class="nav-link d-flex align-items-center active" id="about-tab" data-toggle="tab"
+                    data-target="#about" role="tab" aria-controls="about" aria-selected="true">
+                    <span class="d-none d-sm-block">About</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link d-flex align-items-center" id="myjob-tab" data-toggle="tab"
+                    data-target="#myjob" role="tab" aria-controls="myjob" aria-selected="false">
+                    <span class="d-none d-sm-block">My Job</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link d-flex align-items-center" id="project-tab" data-toggle="tab"
+                    data-target="#project" role="tab" aria-controls="project" aria-selected="false">
+                    <span class="d-none d-sm-block">Project</span>
+                </a>
+            </li>
+            <!-- <li class="nav-item">
                         <a href="{% url 'profile_project' %}" class="nav-link d-flex align-items-center">
                             <span class="d-none d-sm-block">Project</span>
-                            <span class="d-block d-sm-none">Proj</span>
+                            <span class="d-block d-sm-none">Project</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{% url 'profile_certification' %}" class="nav-link d-flex align-items-center">
-                            <span class="d-none d-sm-block">Certification</span>
-                            <span class="d-block d-sm-none">Cert</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    </li> -->
+            <li class="nav-item">
+                <a href="#" class="nav-link d-flex align-items-center" id="certification-tab" data-toggle="tab"
+                    data-target="#certification" role="tab" aria-controls="certification" aria-selected="false">
+                    <span class="d-none d-sm-block">Certifications</span>
+                </a>
+            </li>
+        </ul>
 
-            
-            <div class="tab-content mt-sm-60 mt-30 float-left mx-auto">
-                <div class="tab-pane fade show active" role="tabpanel">
-                    <div class="container-fluid">
-                        <h5 class="">About</h5>
-                        <div class="row">
-                            <div class="col-lg-7 ">
-
-                                <div class="card shadow float-left">
-                                    <div class="card-body">
-
-                                        <p style="font-size:16px">
-                                            Hi I'm venkatasai s, It will be as simple as Occidental;
-                                            in fact, it will be Occidental. To an English person, it
-                                            will seem like simplified English, as a skeptical
-                                            Cambridge friend of mine told me what Occidental is
-                                            European languages are members of the same family.
-                                        </p>
-                                        <p style="font-size: 16px">
-                                            You always want to make sure that your fonts work well
-                                            together and try to limit the number of fonts you use to
-                                            three or less. Experiment and play around with the fonts
-                                            that you already have in the software you’re working with
-                                            reputable font websites. This may be the most commonly
-                                            encountered tip I received from the designers I spoke
-                                            with. They highly encourage that you use different fonts
-                                            in one design, but do not over-exaggerate and go
-                                            overboard.
-                                        </p>
-                                        <div class="row">
-                                            <div class="col-6 col-md-4">
-                                                <div class="d-flex mt-4">
-                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                                        <div
-                                                            class="avatar-title bg-light rounded-circle fs-16 text-primary">
-                                                            <i class="ri-user-2-fill"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex-grow-1 overflow-hidden">
-                                                        <p class="mb-1" style="font-size: 13px">
-                                                            Designation :
-                                                        </p>
-                                                        <h6 class="text-truncate mb-0" style="font-size: 13px">
-                                                            Lead Designer / Developer
-                                                        </h6>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-6 col-md-4">
-                                                <div class="d-flex mt-4">
-                                                    <div class="flex-shrink-0 avatar-xs align-self-center me-3">
-                                                        <div
-                                                            class="avatar-title bg-light rounded-circle fs-16 text-primary">
-                                                            <i class="ion ion-ios-gl"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex-grow-1">
-                                                        <p class="mb-1" style="font-size: 13px">
-                                                            Website :
-                                                        </p>
-                                                        <a class="fw-semibold"
-                                                            href="https://qualitythought.in/">www.qualitythought.com</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                        </div>
-                                        <!--end row-->
-                                    </div>
-                                    <!--end card-body-->
-                                </div>
-                            </div>
-                            <div class="col-lg-5">
-                                <div class="card shadow card-profile-feed">
-                                    <div class="card-header card-header-action">
-                                        <div class="media align-items-center">
-                                            <div class="media-img-wrap d-flex mr-10">
-                                                <div class="avatar avatar-sm">
-                                                    <img src="{% static 'dist/img/avatar1.jpg' %}" alt="user"
-                                                        class="avatar-img rounded-circle" />
-                                                </div>
-                                            </div>
-                                            <div class="media-body">
-                                                <div class="text-capitalize font-weight-500 text-dark">
-                                                    venkat
-                                                </div>
-                                                <div class="font-13">Student</div>
-                                            </div>
-                                        </div>
-                                        <div class="d-flex align-items-center card-action-wrap">
-                                            <div class="inline-block dropdown">
-                                                <a class="dropdown-toggle no-caret" data-toggle="dropdown" href="#"
-                                                    aria-expanded="false" role="button"><i
-                                                        class="ion ion-ios-settings"></i></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#">Action</a>
-                                                    <a class="dropdown-item" href="#">Edit</a>
-                                                    <a class="dropdown-item" href="#">Something else here</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">Separated link</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+        <div class="tab-content" id="MyTabContent">
+            <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                <div class="about-tab-content">
+                    <div class="about-overview">
+                        <div class="container-fluid">
+                            <h5 class="mt-3">Profile Details</h5>
+                            <section class="hk-sec-wrapper">
+                                <div class="row">
                                     <div class="table-responsive">
-                                        <table class="table table-borderless mb-0">
+                                        <table class="table table-bordered mb-0">
                                             <tbody>
-                                                <tr>
-                                                    <th class="ps-0" scope="row">Student Id :</th>
-                                                    <td class="text-muted">24IH508</td>
+                                                <tr class="text-center"
+                                                    style="background-color: #132649; color: white;">
+                                                    <th class="ps-0 text-white" scope="row">Student Id :</th>
+                                                    <th class="ps-0 text-white" scope="row">Student Name:</th>
+                                                    <th class="ps-0 text-white" scope="row">E-mail :</th>
+                                                    <th class="ps-0 text-white" scope="row">Mobile No :</th>
+                                                    <th class="ps-0 text-white" scope="row">Location :</th>
+                                                    <th class="ps-0 text-white" scope="row">Joining Date :</th>
                                                 </tr>
                                                 <tr>
-                                                    <th class="ps-0" scope="row">Student Name:</th>
-                                                    <td class="text-muted">venkatasai s</td>
+                                                    <td class=" text-center">24IH508</td>
+                                                    <td class=" text-center">venkatasai s</td>
+                                                    <td class=" text-center">+(91) 9398024041</td>
+                                                    <td class=" text-center">balanagavenkatasai@gmail.com</td>
+                                                    <td class=" text-center">Hyderabad, India</td>
+                                                    <td class=" text-center">March 27, 2024, 1:22 p.m.
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                            <h5 class="">Education Qualification</h5>
+                            <section class="hk-sec-wrapper">
+                                <div class="row">
+                                    <div class="table-responsive">
+                                        <table class="table align-middle  table-bordered" id="customerTable1">
+                                            <thead class="table text-center  mr-2">
+                                                <tr class="text-center" style="background-color: #132649;">
+                                                    <th class="text-white">Education</th>
+                                                    <th class="text-white">School / College Name</th>
+                                                    <th class="text-white">Passed Out Year</th>
+                                                    <th class="text-white">Percentage</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody align="center" class="list form-check-all">
+                                                <tr>
+                                                    <td>SSC</td>
+                                                    <td>Zepto High School</td>
+                                                    <td>2014</td>
+                                                    <td>70%</td>
                                                 </tr>
                                                 <tr>
-                                                    <th class="ps-0" scope="row">Mobile No :</th>
-                                                    <td class="text-muted">+(91) 9398024041</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="ps-0" scope="row">E-mail :</th>
-                                                    <td class="text-muted">
-                                                        balanagavenkatasai@gmail.com
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <th class="ps-0" scope="row">Location :</th>
-                                                    <td class="text-muted">Hyderabad, India</td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="ps-0" scope="row">Joining Date :</th>
-                                                    <td class="text-muted">March 27, 2024, 1:22 p.m.</td>
+                                                    <td>Intermediate</td>
+                                                    <td>Whatsapp jr College</td>
+                                                    <td>2016</td>
+                                                    <td>70%</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="myjob" role="tabpanel" aria-labelledby="myjob-tab">
+                <div class="myjob-tab-content">
+                    <div class="myjob-overview">
+                        <section class="hk-sec-wrapper mt-3">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="table-wrap">
+                                        <!--                                        <div class="table-responsive">-->
+                                        <table id="datable_1"
+                                            class="table table-hover w-100 display pb-30 table-bordered">
+                                            <thead>
+                                                <tr style="background-color: #132649; color: white;">
+                                                    <th class="text-white">ID</th>
+                                                    <th class="text-white">Title</th>
+                                                    <th class="text-white">Company Name</th>
+                                                    <th class="text-white">Location</th>
+                                                    <th class="text-white">Category</th>
+                                                    <th class="text-white">Experience</th>
+                                                    <th class="text-white">Applied date</th>
+                                                    <th class="text-white">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>605</td>
+                                                    <td><a href="{% url 'job_details' %}">Associate Python Developer</a></td>
+                                                    <td>Ramana soft</td>
+                                                    <td>Pan India</td>
+                                                    <td>IT</td>
+                                                    <td>01</td>
+                                                    <td>1/1/2024</td>
+                                                    <td><span class="badge badge-success">Completed</span></td>
+                                                </tr>
+
+                                            </tbody>
+                                            <!--                                            <tfoot>-->
+                                            <!--                                                <tr>-->
+                                            <!--                                                    <th>Name</th>-->
+                                            <!--                                                    <th>Position</th>-->
+                                            <!--                                                    <th>Office</th>-->
+                                            <!--                                                    <th>Age</th>-->
+                                            <!--                                                    <th>Start date</th>-->
+                                            <!--                                                    <th>Salary</th>-->
+                                            <!--                                                </tr>-->
+                                            <!--                                            </tfoot>-->
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="project" role="tabpanel" aria-labelledby="project-tab">
+                <div class="project">
+                    <div class="project-overview">
+                        <section class="hk-sec-wrapper mt-3">
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="table-responsive">
+                                        <!--                                        <div class="table-responsive">-->
+                                        <div id="datable_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="dataTables_length" id="datable_1_length"><label><select
+                                                                name="datable_1_length" aria-controls="datable_1"
+                                                                class="custom-select custom-select-sm form-control form-control-sm">
+                                                                <option value="10">10</option>
+                                                                <option value="25">25</option>
+                                                                <option value="50">50</option>
+                                                                <option value="100">100</option>
+                                                            </select>items</label></div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div id="datable_1_filter" class="dataTables_filter"><label><input
+                                                                type="search" class="form-control form-control-sm"
+                                                                placeholder="Search" aria-controls="datable_1"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="datable_1"
+                                                        class="table table-hover w-100 display pb-30 table-bordered dataTable no-footer dtr-inline"
+                                                        role="grid" aria-describedby="datable_1_info">
+                                                        <thead>
+                                                            <tr style="background-color: #132649;" role="row">
+                                                                <th class="text-white">S.No</th>
+                                                                <th class="text-white">Project Title</th>
+                                                                <th class="text-white">Description</th>
+                                                                <th class="text-white">Start Date</th>
+                                                                <th class="text-white">End Date</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+
+
+                                                            <tr role="row" class="odd">
+                                                                <td>1</td>
+                                                                <td>QT Next</td>
+                                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+                                                                <td>12/01/2024</td>
+                                                                <td>12/06/2024</td>
+                                                               
+                                                            </tr>
+
+                                                            <tr role="row" class="odd">
+                                                                <td>2</td>
+                                                                <td>QT Lineone</td>
+                                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. </td>
+                                                                <td>12/01/2024</td>
+                                                                <td>12/06/2024</td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-5">
+                                                    <div class="dataTables_info" id="datable_1_info" role="status"
+                                                        aria-live="polite">Showing 1 to 1 of 1 entries</div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-7">
+                                                    <div class="dataTables_paginate paging_simple_numbers"
+                                                        id="datable_1_paginate">
+                                                        <ul class="pagination">
+                                                            <li class="paginate_button page-item previous disabled"
+                                                                id="datable_1_previous"><a href="#"
+                                                                    aria-controls="datable_1" data-dt-idx="0"
+                                                                    tabindex="0" class="page-link">Previous</a></li>
+                                                            <li class="paginate_button page-item active"><a href="#"
+                                                                    aria-controls="datable_1" data-dt-idx="1"
+                                                                    tabindex="0" class="page-link">1</a></li>
+                                                            <li class="paginate_button page-item next disabled"
+                                                                id="datable_1_next"><a href="#"
+                                                                    aria-controls="datable_1" data-dt-idx="2"
+                                                                    tabindex="0" class="page-link">Next</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade show" id="certification" role="tabpanel" aria-labelledby="certification-tab">
+                <div class="certification">
+                    <div class="certification-overview">
+                        <section class="hk-sec-wrapper mt-3">
+                            <!--                            <h5 class="hk-sec-title">Data Table</h5>-->
+                            <!--                            <p class="mb-40">Add advanced interaction controls to HTML tables like <code>search, pagination & selectors</code>. For responsive table just add the <code>responsive: true</code> to your DataTables function. <a href="https://datatables.net/reference/option/" >View all options</a>.</p>-->
+                            <div class="row">
+                                <div class="col-sm">
+                                    <div class="table-wrap">
+                                        <!--                                        <div class="table-responsive">-->
+                                        <div id="datable_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div class="dataTables_length" id="datable_1_length"><label><select
+                                                                name="datable_1_length" aria-controls="datable_1"
+                                                                class="custom-select custom-select-sm form-control form-control-sm">
+                                                                <option value="10">10</option>
+                                                                <option value="25">25</option>
+                                                                <option value="50">50</option>
+                                                                <option value="100">100</option>
+                                                            </select>items</label></div>
+                                                </div>
+                                                <div class="col-sm-12 col-md-6">
+                                                    <div id="datable_1_filter" class="dataTables_filter"><label><input
+                                                                type="search" class="form-control form-control-sm"
+                                                                placeholder="Search" aria-controls="datable_1"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <table id="datable_1"
+                                                        class="table table-hover w-100 display pb-30 table-bordered dataTable no-footer dtr-inline"
+                                                        role="grid" aria-describedby="datable_1_info">
+                                                        <thead>
+                                                            <tr style="background-color: #132649; color: white;">
+                                                                <th class="text-white">ID</th>
+                                                                <th class="text-white">Certification ID</th>
+                                                                <th class="text-white">Certificate Name</th>
+                                                                <th class="text-white">Company</th>
+                                                                <th class="text-white">Certificate Type</th>
+                                                                <th class="text-white">Stating Date</th>
+                                                                <th class="text-white">Ending Date</th>
+                                                                <th class="text-white">Status</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>1</td>
+                                                                <td>258963</td>
+                                                                <td>Python Developer</td>
+                                                                <td>Ramanasoft</td>
+                                                                <td>Intern</td>
+                                                                <td>01/2/2024</td>
+                                                                <td>1/5/2024</td>
+                                                                <td><span class="badge badge-success">Completed</span>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>2</td>
+                                                                <td>252363</td>
+                                                                <td>Full Stack Python Developer</td>
+                                                                <td>IHUB</td>
+                                                                <td>Course</td>
+                                                                <td>01/2/2024</td>
+                                                                <td>1/5/2024</td>
+                                                                <td><span class="badge badge-success">Completed</span>
+                                                                </td>
+                                                            </tr>
+
+                                                        </tbody>
+
+                                                        <!--<tfoot>-->
+                                                        <!--    <tr>-->
+                                                        <!--        <th>Name</th>-->
+                                                        <!--        <th>Position</th>-->
+                                                        <!--        <th>Office</th>-->
+                                                        <!--        <th>Age</th>-->
+                                                        <!--        <th>Start date</th>-->
+                                                        <!--        <th>Salary</th>-->
+                                                        <!--    </tr>-->
+                                                        <!--</tfoot>-->
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
+
+
+
     </div>
-    <!-- end card -->
+</div>
+<!-- end card -->
 
-    <h5 class="">Education Qualification</h5>
-    <div class="row">
 
-        <div class="col-lg-12">
-            <div class="card shadow">
-                <div class="row">
-                    <div class="col-md col-lg col-sm">
-                        <div class="form-group">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="m-4">
-                    <table class="table align-middle  table-bordered" id="customerTable1">
-                        <thead class="table text-center  mr-2">
-                            <tr class="text-center" style="background-color: #132649;">
-                                <th class="text-white">Education</th>
-                                <th class="text-white">School / College Name</th>
-                                <th class="text-white">Passed Out Year</th>
-                                <th class="text-white">Percentage</th>
-                            </tr>
-                        </thead>
-                        <tbody align="center" class="list form-check-all">
-                            <tr>
-                                <td>SSC</td>
-                                <td>Zepto High School</td>
-                                <td>2014</td>
-                                <td>70%</td>
-                            </tr>
-                            <tr>
-                                <td>Intermediate</td>
-                                <td>Whatsapp jr College</td>
-                                <td>2016</td>
-                                <td>70%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <!-- end card -->
-        </div>
-        <!-- end col -->
-    </div>
 </div>
 <!-- /Row -->
 
@@ -285,7 +434,7 @@
         <div class="modal-content">
             <div class="modal-header" style="background-color: #132649;">
                 <h5 class="modal-title text-white">Edit Profile</h5>
-                <button type="button" class="close text-white"  data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
@@ -367,7 +516,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn" style="background-color: #132649; color: white;" type="submit">Submit form</button>
+                            <button class="btn" style="background-color: #132649; color: white;" type="submit">Submit
+                                form</button>
                         </form>
                     </div>
                 </div>
@@ -375,4 +525,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

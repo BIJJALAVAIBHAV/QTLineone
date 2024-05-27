@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .toggle.toggle-bg-primary .toggle-on.active+.toggle-blob {
+        border-color: #132649;
+    }
+
+    .toggle.toggle-bg-sky .toggle-on,
+    .toggle.toggle-bg-sky .toggle-select .toggle-inner .active,
+    .toggle.toggle-bg-primary .toggle-on,
+    .toggle.toggle-bg-primary .toggle-select .toggle-inner .active {
+        background: #132649;
+        color: #fff;
+        text-shadow: none;
+        box-shadow: none;
+    }
+
+    .toggle .toggle-off {
+        background: #6f8793;
+        text-shadow: none;
+        color: #fff;
+    }
+
+    .list-group {
+        color: #132649;
+    }
+</style>
+
+<div class="container-fluid mt-3 mb-2">
+    <div class="hk-pg-header mb-1">
+        <h4 class="hk-pg-title">Settings</h4>
+        <div>
+
+            <nav class="navbar p-0">
+                <!-- <h4>Mocks</h4> -->
+                <ul class="nav float-right justify-content-end">
+                    <li class="breadcrumb-item">
+                        <a class="" aria-current="page" href="/student/dash/">Home</a>
+                    </li>
+
+
+                    <li class="breadcrumb-item active">
+                        settings
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section class="hk-sec-wrapper m-0">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="list-group d-flex justify-content-between">
+                    <a class="mb-2">
+                        <li class="list-group-item ">Enable Notifications for Job Updates: <span
+                                class="toggle toggle-simple toggle-light toggle-bg-primary toggle1"
+                                style="height: 15px;  width: 30px;">
+                                <div class="toggle-slide">
+                                    <div class="toggle-inner" style="width: 69px; margin-left: -22px;">
+                                        <div class="toggle-on"
+                                            style="height: 25px; width: 34.5px; text-indent: -8.33333px; line-height: 25px;">
+                                        </div>
+                                        <div class="toggle-blob"
+                                            style="height: 25px; width: 25px; margin-left: -12.5px;"></div>
+                                        <div class="toggle-off active"
+                                            style="height: 25px; width: 34.5px; margin-left: -12.5px; text-indent: 8.33333px; line-height: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </span></li>
+
+                    </a>
+                    <a class="mb-2">
+                        <li class="list-group-item">Enable Notifications for Calendar Updates: <span
+                                class="toggle toggle-simple toggle-light toggle-bg-primary toggle1"
+                                style="height: 15px;  width: 30px;">
+                                <div class="toggle-slide">
+                                    <div class="toggle-inner" style="width: 69px; margin-left: -22px;">
+                                        <div class="toggle-on"
+                                            style="height: 25px; width: 34.5px; text-indent: -8.33333px; line-height: 25px;">
+                                        </div>
+                                        <div class="toggle-blob"
+                                            style="height: 25px; width: 25px; margin-left: -12.5px;"></div>
+                                        <div class="toggle-off active"
+                                            style="height: 25px; width: 34.5px; margin-left: -12.5px; text-indent: 8.33333px; line-height: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </span></li>
+
+                    </a>
+                    <a class="mb-2">
+                        <li class="list-group-item">Enable Notifications for Course Updates: <span
+                                class="toggle toggle-simple toggle-light toggle-bg-primary toggle1"
+                                style="height: 15px;  width: 30px;">
+                                <div class="toggle-slide">
+                                    <div class="toggle-inner" style="width: 69px; margin-left: -22px;">
+                                        <div class="toggle-on"
+                                            style="height: 25px; width: 34.5px; text-indent: -8.33333px; line-height: 25px;">
+                                        </div>
+                                        <div class="toggle-blob"
+                                            style="height: 25px; width: 25px; margin-left: -12.5px;"></div>
+                                        <div class="toggle-off active"
+                                            style="height: 25px; width: 34.5px; margin-left: -12.5px; text-indent: 8.33333px; line-height: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </span></li>
+
+                    </a>
+                    <a class="mb-2">
+                        <li class="list-group-item">Enable Notifications for Placement Updates: <span
+                                class="toggle toggle-simple toggle-light toggle-bg-primary toggle1"
+                                style="height: 15px;  width: 30px;">
+                                <div class="toggle-slide">
+                                    <div class="toggle-inner" style="width: 69px; margin-left: -22px;">
+                                        <div class="toggle-on"
+                                            style="height: 25px; width: 34.5px; text-indent: -8.33333px; line-height: 25px;">
+                                        </div>
+                                        <div class="toggle-blob"
+                                            style="height: 25px; width: 25px; margin-left: -12.5px;"></div>
+                                        <div class="toggle-off active"
+                                            style="height: 25px; width: 34.5px; margin-left: -12.5px; text-indent: 8.33333px; line-height: 25px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </span></li>
+
+                    </a>
+                    <a href="#" data-toggle="modal" class="text-dark" data-target="#changePassword">
+                        <li class="list-group-item mb-2">Change Password</li>
+                    </a>
+                    <a href="#" class="text-dark" data-toggle="modal" data-target="#nameChange">
+                        <li class="list-group-item">Name, Email, and Phone Number</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="modal fade" id="changePassword" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #132649;">
+                <h5 class="modal-title text-white" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="mb-2">
+                        <label for="" class="form-label">Old Password</label>
+                        <input type="text" class="form-control" name="old_password" id="old_password"
+                            placeholder="Old password" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">New Password</label>
+                        <input type="text" class="form-control" name="new_password" id="new_password"
+                            placeholder="New password" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Confirm Password</label>
+                        <input type="text" class="form-control" name="confirm_password" id="confirm_password"
+                            placeholder="Confirm password" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="nameChange" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #132649;">
+                <h5 class="modal-title text-white" id="exampleModalLabel">Change Password</h5>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="post">
+                    <div class="mb-2">
+                        <label for="" class="form-label">Name:</label>
+                        <input type="text" class="form-control" name="new_name" id="new_name" placeholder="new_name"
+                            required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Email:</label>
+                        <input type="email" class="form-control" name="new_Email" id="new_Email" placeholder="new_email"
+                            required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="" class="form-label">Phone_number</label>
+                        <input type="text" class="form-control" name="New Phone_number" id="New Phone_number"
+                            placeholder="new_Phone_Number" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" style="background-color: #132649; color: #fff;"
+                            class="btn ">Submit</button>
+
+                    </div>
+                </form>
+
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

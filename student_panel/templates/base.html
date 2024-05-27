@@ -7,6 +7,7 @@ License: You must have a valid license purchased only from templatemonster to le
 -->
 <html lang="en">
 <!-- Mirrored from hencework.com/theme/deepor/dashboard1.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Nov 2023 13:25:35 GMT -->
+{% load static %}
 
 <head>
     <meta charset="UTF-8" />
@@ -69,6 +70,11 @@ License: You must have a valid license purchased only from templatemonster to le
     <!-- Bootstrap Dropzone CSS -->
 
     <link href="../../static/css/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Calendar CSS -->
+    <!-- <link rel="stylesheet" href="{% static '/vendors4/fullcalendar/dist/fullcalendar.min.css' %}"> -->
+
+    <link rel="stylesheet" href="../../console/static/dist/css/sty">
 </head>
 <style>
     .cards {
@@ -198,31 +204,72 @@ License: You must have a valid license purchased only from templatemonster to le
         background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
 
     }
+
+    .navbar-nav li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navs {
+        overflow: scroll;
+        white-space: nowrap;
+    }
+
+    .navbar-nav::-webkit-scrollbar {
+        height: 0px;
+    }
+    .scroll-menu-container {
+    display: flex;
+    align-items: center;
+}
+
+.scroll-menu-container .scroll-btn-left,
+.scroll-menu-container .scroll-btn-right {
+    flex-shrink: 0;
+}
+
+.scroll-menu-container #scrollMenu1 {
+    flex-grow: 1;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.scroll-menu-container #scrollMenu1::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.scroll-menu-container .nav-item {
+    flex: 0 0 auto;
+}
+
 </style>
 
 <body>
     <!-- HK Wrapper -->
-    <div class="hk-wrapper hk-vertical-nav">
+    <div class="hk-wrapper hk-horizontal-nav">
         <!-- Top Navbar -->
-        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar" style="background-color: #132649; ">
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar">
             <a id="navbar_toggle_btn" class="navbar-toggle-btn nav-link-hover" href="javascript:void(0);"><i
-                    class="ion ion-ios-menu" style='color:white;'></i></a>
-            <a class="navbar-brand" href="dashboard1.html">
+                    class="ion ion-ios-menu"></i></a>
+            <a class="navbar-brand" href="/student/dash/">
                 <img class="brand-img d-inline-block mr-5" src="../../static/images/logo/Quality_thought_logo.png"
                     width="150" alt="" />
             </a>
             <ul class="navbar-nav hk-navbar-content">
                 <li class="nav-item">
                     <a id="navbar_search_btn" class="nav-link nav-link-hover mr-2" href="javascript:void(0);"><i
-                            class="ion ion-ios-search text-white"></i></a>
+                            class="ion ion-ios-search "></i></a>
                 </li>
                 <!-- <li class="nav-item">
                     <a id="settings_toggle_btn" class="nav-link nav-link-hover" href="javascript:void(0);"><i class="ion ion-ios-settings"></i></a>
                 </li> -->
                 <li class="nav-item dropdown dropdown-notifications mr-2">
                     <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false"><i
-                            class="ion ion-ios-notifications text-white"></i><span class="badge-wrap"><span
+                        aria-haspopup="true" aria-expanded="false"><i class="ion ion-ios-notifications"></i><span
+                            class="badge-wrap"><span
                                 class="badge badge-primary badge-indicator badge-indicator-sm badge-pill pulse"></span></span></a>
                     <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="fadeIn"
                         data-dropdown-out="fadeOut">
@@ -331,7 +378,7 @@ License: You must have a valid license purchased only from templatemonster to le
                                 <span class="badge badge-success badge-indicator"></span>
                             </div>
                             <div class="media-body">
-                                <span class="text-white">Madelyn Shane<i class="zmdi zmdi-chevron-down"></i></span>
+                                <span>Madelyn Shane<i class="zmdi zmdi-chevron-down"></i></span>
                             </div>
                         </div>
                     </a>
@@ -339,12 +386,13 @@ License: You must have a valid license purchased only from templatemonster to le
                         data-dropdown-out="flipOutX">
                         <a class="dropdown-item" href="{% url 'student_profile' %}"><i
                                 class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
-                        <a class="dropdown-item" href="" data-toggle="modal" data-target="#exampleModal">
+                        <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#exampleModal">
                             <i class="dropdown-icon zmdi zmdi-account"></i><span>ID</span></a>
-                        <!-- <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My balance</span></a> -->
+                        <!-- <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My
+                                balance</span></a> -->
                         <a class="dropdown-item" href="#"><i
                                 class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
-                        <a class="dropdown-item" href="#"><i
+                        <a class="dropdown-item" href="{% url 'settings' %}"><i
                                 class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
 
                         <div class="dropdown-divider"></div>
@@ -369,162 +417,125 @@ License: You must have a valid license purchased only from templatemonster to le
         <!-- Vertical Nav -->
         <nav class="hk-nav hk-nav-light" style="background-color: #132649;">
             <a href="javascript:void(0);" id="hk_nav_close" class="hk-nav-close"><span
-                    class="feather-icon text-white"><i data-feather="x"></i></span></a>
-            <div class="nicescroll-bar" style="background-color: #132649;">
-                <div class="navbar-nav-wrap">
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item active">
-                            <a class="nav-link text-white" href="{% url 'dash' %}">
-                                <i class="ion ion-ios-keypad"></i>
-                                <span class="nav-link-text">Dashboard</span>
-                            </a>
-                        </li>
+                    class="feather-icon text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="feather feather-x">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg></span></a>
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+                <div class="nicescroll-bar"
+                    style="background-color: rgb(19, 38, 73); overflow: hidden; width: auto; height: 100%; outline: none;"
+                    tabindex="-50">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'my_courses' %}">
-                                <i class="fa fa-bookmark"></i>
-                                <span class="nav-link-text">Courses</span>
-                            </a>
-                            
-                        </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'all_courses' %}">
-                                <i class="fa fa-bookmark"></i>
-                                <span class="nav-link-text">All Courses</span>
-                            </a>
-                            
-                        </li> -->
-                        <!--              <li class="nav-item">-->
-                        <!--                <a-->
-                        <!--                  class="nav-link"-->
-                        <!--                  href="javascript:void(0);"-->
-                        <!--                  data-toggle="collapse"-->
-                        <!--                  data-target="#pages_drp"-->
-                        <!--                >-->
-                        <!--                  <i class="ion ion-ios-copy"></i>-->
-                        <!--                  <span class="nav-link-text">Assignments</span>-->
-                        <!--                </a>-->
-                        <!--                <ul-->
-                        <!--                  id="pages_drp"-->
-                        <!--                  class="nav flex-column collapse collapse-level-1"-->
-                        <!--                >-->
-                        <!--                  <li class="nav-item">-->
-                        <!--                    <ul class="nav flex-column">-->
-                        <!--                      <li class="nav-item">-->
-                        <!--                        <a class="nav-link" href="#">Mock tests</a>-->
-                        <!--                      </li>-->
-                        <!--                      <li class="nav-item">-->
-                        <!--                        <a class="nav-link" href="#">Results</a>-->
-                        <!--                      </li>-->
-                        <!--                      <li class="nav-item">-->
-                        <!--                        <a class="nav-link" href="#">Resources</a>-->
-                        <!--                      </li>-->
-                        <!--                    </ul>-->
-                        <!--                  </li>-->
-                        <!--                </ul>-->
-                        <!--              </li>-->
-                    </ul>
-                    <!-- <hr class="nav-separator">
-                    <div class="nav-header">
-                        <span>User Interface</span>
-                        <span>UI</span>
-                    </div> -->
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="javascript:void(0);" data-toggle="collapse"
-                                data-target="#Components_drp">
-                                <i class="fa fa-building"></i>
-                                <span class="nav-link-text">Placements</span>
-                            </a>
-                            <ul id="Components_drp" class="nav flex-column collapse collapse-level-1">
+                    <div class="navbar-nav-wrap">
+                        <div class="scroll-menu-container d-flex align-items-center">
+                            <a class="scroll-btn-left text-white px-2" onclick="scrollMenu1(-1)" style="cursor: pointer;">❮</a>
+                            <ul class="navbar-nav navs flex-row flex-nowrap overflow-hidden" id="scrollMenu1">
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="/student/dash/">
+                                        <i class="ion ion-ios-keypad"></i>
+                                        <span class="nav-link-text">&nbsp;Dashboard</span>
+                                    </a>
+                                </li>
                                 <li class="nav-item">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{% url 'jobs' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;My Job</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{% url 'mocks' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;Mocks</a>
-                                        </li>
-                                    </ul>
+                                    <a class="nav-link text-white" href="/student/my_courses/">
+                                        <i class="linea-icon linea-basic" data-icon="u"></i>
+                                        <span class="nav-link-text">&nbsp;My Courses</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/mocks/">
+                                        <i class="fa fa-tv"></i>
+                                        <span class="nav-link-text">&nbsp;Mocks</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/my_course_video1/">
+                                        <i class="fa fa-graduation-cap"></i>
+                                        <span class="nav-link-text">&nbsp;LMS</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/certificate">
+                                        <i class="icon" data-icon="p"></i>
+                                        <span class="nav-link-text">&nbsp;Certificates</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/placement_cell/">
+                                        <i class="fa fa-building-o"></i>
+                                        <span class="nav-link-text">&nbsp;Placement Cell</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/jobs">
+                                        <i class="material-icons">assignment_ind</i>
+                                        <span class="nav-link-text">&nbsp;My Jobs</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/schedules/">
+                                        <i class="glyphicon glyphicon-time"></i>
+                                        <span class="nav-link-text">&nbsp;My Schedules</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="/student/student_attendance/">
+                                        <i class="fa fa-calendar-o"></i>
+                                        <span class="nav-link-text">&nbsp;My Attendance</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="/student/settings/">
+                                        <i class="glyphicon glyphicon-cog"></i>
+                                        <span class="nav-link-text">&nbsp;Settings</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link text-white" href="/student/complaints/">
+                                        <i class="icon" data-icon="g"></i>
+                                        <span class="nav-link-text">&nbsp;Complaints</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/payments/">
+                                        <i class="fa fa-credit-card"></i>
+                                        <span class="nav-link-text">&nbsp;My Payments</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/student/resources/">
+                                        <i class="icon-layers"></i>
+                                        <span class="nav-link-text">&nbsp;Resources</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" href="/">
+                                        <i class="ion ion-ios-power"></i>
+                                        <span class="nav-link-text">&nbsp;Logout</span>
+                                    </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="javascript:void(0);" data-toggle="collapse"
-                                data-target="#content_drp">
-                                <i class="ion ion-ios-calendar"></i>
-                                <span class="nav-link-text ">Attendence / Schedules</span>
-                            </a>
-                            <ul id="content_drp" class="nav flex-column collapse collapse-level-1">
-                                <li class="nav-item">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{% url 'student_attendance' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;Student
-                                                Attendence</a>
-                                        </li>
+                            <a class="scroll-btn-right text-white px-2" onclick="scrollMenu1(1)" style="cursor: pointer;">❯</a>
+                        </div>
+                        
+                        <!-- <hr class="nav-separator">
+                        <div class="nav-header">
+                            <span>User Interface</span>
+                            <span>UI</span>
+                        </div> -->
 
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{% url 'calendar' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;Calendar</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="javascript:void(0);" data-toggle="collapse"
-                                data-target="#utilities_drp">
-                                <i class="fa fa-credit-card"></i>
-                                <span class="nav-link-text">Payment Info</span>
-                            </a>
-                            <ul id="utilities_drp" class="nav flex-column collapse collapse-level-1">
-                                <li class="nav-item">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link text-white" href="{% url 'payments' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;Course
-                                                Payment</a>
-                                        </li>
-                                        <!-- <li class="nav-item">
-                                            <a class="nav-link" href="#">Other Payments</a>
-                                        </li> -->
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'internship' %}" >
-                                <i class="fa fa-laptop"></i>
-                                <span class="nav-link-text">Internship</span>
-                            </a>
-                            
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="javascript:void(0);" data-toggle="collapse"
-                                data-target="#tables_drp">
-                                <i class="glyphicon glyphicon-file"></i>
-                                <span class="nav-link-text ">Certifications</span>
-                            </a>
-                            <ul id="tables_drp" class="nav flex-column collapse collapse-level-1">
-                                <li class="nav-item">
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item ">
-                                            <a class="nav-link text-white" href="{% url 'certificate' %}"><span><i class="icon-arrow-right" style="font-size: 10px;"></i></span>&nbsp;Course
-                                                Certificates</a>
-                                        </li>
-
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                       <hr class="text-white mt-1 ">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'login' %}">
-                                <i class="ion ion-ios-power"></i>
-                                <span class="nav-link-text">Logout</span>
-                            </a>
-                        </li>
-                    </ul>
+                    </div>
+                </div>
+                <div class="slimScrollBar"
+                    style="background: rgb(214, 217, 218); width: 6px; position: absolute; top: 0px; opacity: 0.8; display: none; border-radius: 0px; z-index: 99; right: 1px; height: 50px; outline: none;"
+                    tabindex="-50"></div>
+                <div class="slimScrollRail"
+                    style="width: 6px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;">
                 </div>
             </div>
+
         </nav>
         <div id="hk_nav_backdrop" class="hk-nav-backdrop"></div>
         <!-- /Vertical Nav -->
@@ -712,22 +723,29 @@ License: You must have a valid license purchased only from templatemonster to le
     <!--  -->
     <script src="../../static/vendors4/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
 
+
+    <!-- calendar -->
+    <!-- <script src="{% static 'vendors4/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+    <script src="{% static '/vendors4/jquery-ui.min.js' %}"></script>
+    <script src="../../console/static/vendors4/moment/min/moment.min.js"></script>
+    <script src="{% static '/dist/js/fullcalendar-data.js' %}"></script>
+    <script src="{% static '/dist/js/init.js' %}"></script> -->
+
     <!--ID card modal-->
-    <div class="modal fade" id="exampleModal"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="margin-right: 50%; margin-left:5%">
-                <div class="modal-body ">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-dialog-centered">
+            <div class="modal-content " style="margin-right: 50%; margin-left:5%">
+                <div class="modal-body  ">
                     <div class="col-lg-4 col-sm-12 col-md-6 p-0">
                         <div class="flip-card p-0" onclick="flipCard()">
                             <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <div class="card">
+                                <div class="flip-card-front mb-2 pb-2">
+                                    <div class="card w-100">
                                         <img src="../../static/images/logo/Quality_thought_logo.png"
-                                            style="margin: 5px auto" alt="iHub Talent Logo"
-                                            class="card-logo" />
+                                            style="margin: 5px auto" alt="iHub Talent Logo" class="card-logo" />
                                         <img src="../../static/dist/img/avatar2.jpg" style="height: 100; width: 100%"
                                             class="card-img-top p-3" alt="Front Image" />
-                                        <div class="card-body">
+                                        <div class="card-body pb-2">
                                             <table style="margin-left: 5px; margin-top: 0 auto">
                                                 <tbody>
                                                     <tr>
@@ -741,6 +759,10 @@ License: You must have a valid license purchased only from templatemonster to le
                                                     <tr>
                                                         <th><b>Batch No&nbsp;</b></th>
                                                         <td>: 25</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><b>Branch&nbsp;</b></th>
+                                                        <td>: Madhapur</td>
                                                     </tr>
                                                     <tr>
                                                         <th><b>Course&nbsp;</b></th>
@@ -810,6 +832,37 @@ License: You must have a valid license purchased only from templatemonster to le
             var card = document.querySelector(".flip-card");
             card.classList.toggle("flipped");
         }
+    </script>
+    <script>
+        function scrollMenu1(direction) {
+            var scrollMenu = document.getElementById("scrollMenu1");
+            var scrollAmount = 150 * direction; // Adjust the scroll amount as needed
+            var start = scrollMenu.scrollLeft;
+            var target = start + scrollAmount;
+            var duration = 500; // Adjust duration as needed
+            var startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = timestamp - startTime;
+                scrollMenu.scrollLeft = easeInOutQuad(progress, start, scrollAmount, duration);
+                if (progress < duration) {
+                    requestAnimationFrame(step);
+                }
+            }
+
+            function easeInOutQuad(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(step);
+        }
+
+
+
     </script>
 </body>
 
