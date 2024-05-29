@@ -9,7 +9,7 @@
         <h4>My Jobs</h4>
         <ul class=" nav justify-content-end float-right">
             <li class="breadcrumb-item">
-                <a class="" aria-current="page" href="">Home</a>
+                <a class="" aria-current="page" href="{% url 'dash' %}">Home</a>
             </li>
             <li class="breadcrumb-item">
                 <a class="text-dark" href="javascript:void(0);">My Jobs</a>
@@ -263,53 +263,53 @@
                                     <form action="" method="post">
                                         <div class="row">
                                             <div class="col-md-6 form-group">
-                                                <label for="firstName">Job ID</label>
+                                                <label for="firstName">Job ID: </label>
                                                 <input class="form-control" id="job_id" name="job_id" type="text" placeholder="984">
                                             </div>
                                             <div class="col-md-6 form-group">
-                                                <label for="lastName">Company name</label>
+                                                <label for="lastName">Company name: </label>
                                                 <input class="form-control " id="company_name" name="company_name" type="text" placeholder="QT Lines">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-6 form-group">
-                                                <label for="firstName">Experience</label>
+                                                <label for="firstName">Experience: </label>
                                                 <input class="form-control" id="experience" name="experience" type="text" placeholder="0-1 Year">
                                             </div>
                                             <div class="col-md-6 form-group">
-                                                <label for="lastName">Location</label>
+                                                <label for="lastName">Location: </label>
                                                 <input class="form-control " id="location" name="location" placeholder="Hyderabad" type="text">
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-md-6 form-group">
-                                                <label for="firstName">First name</label>
+                                                <label for="firstName">First name: </label>
                                                 <input class="form-control " id="firstName" name="firstNmae" placeholder="First Name"
                                                     type="text">
                                             </div>
                                             <div class="col-md-6 form-group">
-                                                <label for="lastName">Last name</label>
+                                                <label for="lastName">Last name: </label>
                                                 <input class="form-control " id="lastName" name="lastName" placeholder="Shane" type="text">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="email">Email</label>
+                                            <label for="email">Email: </label>
                                             <input type="email" class="form-control" id="email" name="email" placeholder="example@gmail.com"
                                                 id="" name="">
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="phone_number">Phone Number</label>
+                                            <label for="phone_number">Phone Number: </label>
                                             <input type="number" class="form-control" placeholder="9876543210"
                                                 id="phone_number" name="phone_number">
                                         </div>
 
 
                                         <div class="form-group">
-                                            <label for="address">Address</label>
+                                            <label for="address">Address: </label>
                                             <textarea name="" class="form-control" id="address" name="address" cols="30" rows="2"
                                                 placeholder="H No 7-1-618/NG/302, Flat No 302, Aditya Enclave, Ameerpet, Hyderabad, Telangana, 500016 Land Mark: Beside Ameerpet Metro Station"></textarea>
                                         </div>

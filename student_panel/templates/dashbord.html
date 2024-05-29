@@ -81,112 +81,123 @@
 
 </style> -->
 <style>
-  .card-img {
-    position: relative;
-    overflow: hidden;
-}
+    .card-img {
+        position: relative;
+        overflow: hidden;
+    }
 
-.card-img-bg {
-    height: 250px; 
-    width: auto;
-    /* background-size: cover; */
-}
+    .card-img-bg {
+        height: 250px;
+        width: auto;
+        /* background-size: cover; */
+    }
 
-.text-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-    color: white;
-    box-sizing: border-box; /* Ensure padding is included in width */
-}
+    .text-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        /* Semi-transparent black background */
+        color: white;
+        box-sizing: border-box;
+        /* Ensure padding is included in width */
+    }
 
-.text-overlay span {
-    display: block; /* Display text elements as block to stack vertically */
-}
+    .text-overlay span {
+        display: block;
+        /* Display text elements as block to stack vertically */
+    }
 
-.text-overlay span:last-child {
-    margin-top: 5px; /* Add margin between text elements */
-}
-.scrollmenu {
-  /* background-color: #333; */
-  overflow: hidden; /* Hide horizontal scrollbar */
-  white-space: nowrap;
-  margin-bottom: 15px; /* Add margin to accommodate arrow buttons */
-}
+    .text-overlay span:last-child {
+        margin-top: 5px;
+        /* Add margin between text elements */
+    }
 
-.scrollmenu a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  /* padding: 14px; */
-  text-decoration: none;
-}
+    .scrollmenu {
+        /* background-color: #333; */
+        overflow: hidden;
+        /* Hide horizontal scrollbar */
+        white-space: nowrap;
+        margin-bottom: 15px;
+        /* Add margin to accommodate arrow buttons */
+    }
+
+    .scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        /* padding: 14px; */
+        text-decoration: none;
+    }
 
 
 
-/* Style for scroll buttons */
-.scroll-btn {
-  /* background-color: #333; */
-  background-color: white;
-  border: none;
-  border: none;
-  font-size: larger;
-  color: black;
-  /* padding: 10px 15px; */
-  /* cursor: pointer; */
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  border-color: white;
-}
+    /* Style for scroll buttons */
+    .scroll-btn {
+        /* background-color: #333; */
+        background-color: white;
+        border: none;
+        border: none;
+        font-size: larger;
+        color: black;
+        /* padding: 10px 15px; */
+        /* cursor: pointer; */
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        border-color: white;
+    }
 
-.scroll-btn-left {
-  left: 0;
-}
+    .scroll-btn-left {
+        left: 0;
+    }
 
-.scroll-btn-right {
-  right: 0;
-}
-.scrollbarr::-webkit-scrollbar{
-    width: 0px;
-  height: 0px;
-  background-color: #ece9e9;
-}
-.scrollbarr::-webkit-scrollbar-thumb {
-  background: #939393;
-}
+    .scroll-btn-right {
+        right: 0;
+    }
+
+    .scrollbarr::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        background-color: #ece9e9;
+    }
+
+    .scrollbarr::-webkit-scrollbar-thumb {
+        background: #939393;
+    }
 </style>
 
 <div class="container-fluid mt-4">
     <div class="row">
         <div class="col-lg-3 col-md-6">
+            <a href="{% url 'payments' %}">
             <div class="card cards card-sm shadow" style="border-radius: 5px; ">
-                <div class="card-body ">
-                    <div class="d-flex justify-content-between ">
-                        <div>
-                            <span class="d-block font-15 text-dark font-weight-500">MY PAYMENTS</span>
-                            <span class="text-primary" style="font-size: smaller;"><b>Total</b>: 30000</span>
-                            
+                    <div class="card-body ">
+                        <div class="d-flex justify-content-between ">
+                            <div>
+                                <span class="d-block font-15 text-dark font-weight-500">MY PAYMENTS</span>
+                                <span class="text-primary" style="font-size: smaller;"><b>Total</b>: 30000</span>
+    
+                            </div>
+                            <div>
+                                <span class="">
+                                    <i class="material-icons" style="color: #132649;">account_balance</i>
+                                </span>
+                            </div>
                         </div>
-                        <div>
-                            <span class="">
-                                <i class="material-icons">account_balance</i>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between mt-1">
-                       
+                        <div class="d-flex justify-content-between mt-1">
+    
                             <!-- <span><a class="fs-13 font-weight-500 ">Result&nbsp;: <span style="font-size: 15px;">9 / 12</span></a>&nbsp;</span> -->
                             <span class="text-success" style="font-size: smaller;"><b>Paid</b>: 15000</span>
                             <span class="text-danger" style="font-size: smaller;"><b>Pending</b>: 15000</span>
-
+    
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
         <div class="col-lg-3 col-md-6">
             <div class="card cards card-sm shadow">
@@ -197,14 +208,22 @@
                         </div>
                         <div>
                             <span class="font-weight-500">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-airplay">
+                                    <path
+                                        d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1">
+                                    </path>
+                                    <polygon points="12 15 17 21 7 21 12 15"></polygon>
+                                </svg>
                             </span>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between ">
                         <div class="mt-1">
-                            <span><a class="fs-13 font-weight-500 ">Result&nbsp;: <span style="font-size: 15px;">8 / 10</span></a>&nbsp;</span>
-                            
+                            <span><a class="fs-13 font-weight-500 ">Result&nbsp;: <span style="font-size: 15px;">8 /
+                                        10</span></a>&nbsp;</span>
+
                         </div>
                     </div>
                 </div>
@@ -218,13 +237,15 @@
                             <span class="d-block font-15 text-dark font-weight-500">MY QUIZES</span>
                         </div>
                         <div>
-                            <span class="text-success font-21 font-weight-500"><i class="fa fa-question-circle " style="color: #132649;"></i></span>
+                            <span class="text-success font-21 font-weight-500"><i class="fa fa-question-circle "
+                                    style="color: #132649;"></i></span>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between">
                         <div>
-                            <span><a class="fs-13 font-weight-500 ">Result&nbsp;: <span style="font-size: 15px;">13 / 20</span></a>&nbsp;</span>
-                            
+                            <span><a class="fs-13 font-weight-500 ">Result&nbsp;: <span style="font-size: 15px;">13 /
+                                        20</span></a>&nbsp;</span>
+
                         </div>
                     </div>
                 </div>
@@ -239,7 +260,8 @@
                                 <span class="d-block font-15 text-dark font-weight-500">MY JOBS</span>
                             </div>
                             <div>
-                                <span class="text-success font-21 font-weight-500"><i class="fa fa-briefcase" style="color: #132649;"></i>
+                                <span class="text-success font-21 font-weight-500"><i class="fa fa-briefcase"
+                                        style="color: #132649;"></i>
                                 </span>
                             </div>
                         </div>
@@ -247,13 +269,13 @@
                             <div>
                                 <span class="d-block font-15 text-dark font-weight-500 mb-0">1</span>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </a>
         </div>
-        
+
         <div class="container-fluid m-0">
             <div class="hk-pg-header mt-2 mb-2">
                 <h4 class="hk-pg-title">My Courses</h4>
@@ -289,513 +311,582 @@
                 </div>
             </section> -->
             <section class="hk-sec-wrapper m-0 p-0 pt-2">
-               <div class="container-fluid">
-                   <div class="col-md-12">
-                <div class="row m-0">
-                        <button class="scroll-btn scroll-btn-left" onclick="scrollMenu(-1)">&#10094;</button>
-                <div class="scrollmenu d-flex bg-white mt-3" id="scrollMenu">
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
+                <div class="container-fluid">
+                    <div class="col-md-12">
+                        <div class="row m-0">
+                            <button class="scroll-btn scroll-btn-left" onclick="scrollMenu(-1)">&#10094;</button>
+                            <div class="scrollmenu d-flex bg-white mt-3" id="scrollMenu">
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">Web
+                                                </p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">Java
+                                                </p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Web</p>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">R</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Java</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">R</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
 
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 col-xs-12">
-                        <div class="card w-100 cards shadow ">
-                            <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
-                            <div class="card-body mybody">
-                                <div>
-                                    <p class="card-title" style="font-size: large; font-weight: 400; ">Python Programming</p>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span><b>Level: </b><span class="text-info">Beginner</span></span>
-                                    <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2 days left</span>
-                                </div>
-                                
-                            </div>
-                     
-                            <div class="card-footer">
-                                <a href="{% url 'my_course_video1'%}" class="btn btn-info btn-sm text-white mt-2 float-start" style="text-decoration: none;">
-                                    <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue Watching
-                                    
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
 
-                    
-                    <!-- Add more links as needed -->
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-xs-12">
+                                    <div class="card w-100 cards shadow ">
+                                        <img class="img-top" src="{% static 'img/3.jpg' %}" alt="Card image cap" />
+                                        <div class="card-body mybody">
+                                            <div>
+                                                <p class="card-title" style="font-size: large; font-weight: 400; ">
+                                                    Python Programming</p>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <span><b>Level: </b><span class="text-info">Beginner</span></span>
+                                                <span class="text-info"><i class="glyphicon glyphicon-time"></i>&nbsp;2
+                                                    days left</span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <a href="{% url 'my_course_video1'%}"
+                                                class="btn btn-info btn-sm text-white mt-2 float-start"
+                                                style="text-decoration: none;">
+                                                <i class="ion ion-md-arrow-dropright-circle"></i>&nbsp; Continue
+                                                Watching
+
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Add more links as needed -->
+                            </div>
+                            <button class="scroll-btn scroll-btn-right" onclick="scrollMenu(1)">&#10095;</button>
+                        </div>
+                    </div>
                 </div>
-                <button class="scroll-btn scroll-btn-right" onclick="scrollMenu(1)">&#10095;</button>
-                    </div>
-                </div>
-               </div>
             </section>
-            
+
         </div>
 
         <div class="container-fluid m-0">
             <div class="hk-pg-header mt-3 mb-2">
                 <h4 class="hk-pg-title">My Transcriptions</h4>
             </div>
-            
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card shadow">
-                            <div class="card-header" style="background-color: #132649; color: white;">My Quiz</div>
-                            <div class="scrollbarr" style="max-height: 300px; overflow-y: auto; ">
-                          
-                              
-                                        <table class="table table-hover mb-0">
-                                            <thead>
-                                                <tr class="text-center">
-                                                    <th>S.No</th>
-                                                    <th>Quiz Title</th>
-                                                    <th class="w-100">Total QA</th>
-                                                    <th>Score</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="text-center">
-                                               <tr>
-                                                <td>1</td>
-                                                <td>Variables</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>Pass</td>
-                                               </tr>
-                                               <tr>
-                                                <td>1</td>
-                                                <td>String methods</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>Pass</td>
-                                               </tr>
-                                               <tr>
-                                                <td>1</td>
-                                                <td>Data Types</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>Pass</td>
-                                               </tr>
-                                               <tr>
-                                                <td>1</td>
-                                                <td>Operators</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>Pass</td>
-                                               </tr>
-                                               <tr>
-                                                <td>1</td>
-                                                <td>Control Statements</td>
-                                                <td>20</td>
-                                                <td>15</td>
-                                                <td>Pass</td>
-                                               </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                              
-               
-                        </div>
-                       
-                    </div>
 
-                    <div class="col-lg-4">
-                        <div class="card shadow">
-                            <div class="card-header" style="background-color: #132649; color: white;">My Worksheet</div>
-                            <div class="scrollbarr" style="max-height: 300px; overflow-y: auto;">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>S.No</th>
-                                            <th>Title</th>
-                                            <th class="w-100">Total QA</th>
-                                            <th>Score</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-center">
-                                       <tr>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow">
+                        <div class="card-header" style="background-color: #132649; color: white;">My Quiz</div>
+                        <div class="scrollbarr" style="max-height: 300px; overflow-y: auto; ">
+
+
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>S.No</th>
+                                        <th>Quiz Title</th>
+                                        <th class="w-100">Total QA</th>
+                                        <th>Score</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr>
                                         <td>1</td>
                                         <td>Variables</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>String methods</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Data Types</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Operators</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Control Statements</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+
+
                     </div>
 
-                    <div class="col-lg-4">
-                        <div class="card shadow">
-                            <div class="card-header" style="background-color: #132649; color: white;">My Assessments</div>
-                            <div class="scrollbarr" style="max-height: 300px; overflow-y: auto;">
-                                <table class="table table-hover mb-0">
-                                    <thead>
-                                        <tr class="text-center">
-                                            <th>S.No</th>
-                                            <th>Title</th>
-                                            <th class="w-100">Total QA</th>
-                                            <th>Score</th>
-                                            <th>Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="text-center">
-                                       <tr>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card shadow">
+                        <div class="card-header" style="background-color: #132649; color: white;">My Worksheet</div>
+                        <div class="scrollbarr" style="max-height: 300px; overflow-y: auto;">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>S.No</th>
+                                        <th>Title</th>
+                                        <th class="w-100">Total QA</th>
+                                        <th>Score</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr>
                                         <td>1</td>
                                         <td>Variables</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>String methods</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Data Types</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Operators</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                       <tr>
+                                    </tr>
+                                    <tr>
                                         <td>1</td>
                                         <td>Control Statements</td>
                                         <td>20</td>
                                         <td>15</td>
                                         <td>Pass</td>
-                                       </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-           
+
+                <div class="col-lg-4">
+                    <div class="card shadow">
+                        <div class="card-header" style="background-color: #132649; color: white;">My Assessments</div>
+                        <div class="scrollbarr" style="max-height: 300px; overflow-y: auto;">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th>S.No</th>
+                                        <th>Title</th>
+                                        <th class="w-100">Total QA</th>
+                                        <th>Score</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Variables</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>String methods</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Data Types</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Operators</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>Pass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Control Statements</td>
+                                        <td>20</td>
+                                        <td>15</td>
+                                        <td>Pass</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="container-fluid m-0">
@@ -804,142 +895,143 @@
             </div>
             <section class="hk-sec-wrapper">
                 <div class="row">
-                   <div class="col-lg-12">
-                   <div class="table-wrap">
-                    <table id="datable_1" class=" table table-hover display pb-30 w-100 table-bordered">
-                        <thead style="background-color: #132649; color: white;">
-                            <tr class="text-center">
-                                <th class="text-white">ID</th>
-                                <th class="text-white">title</th>
-                                <th class="text-white">Company Name</th>
-                                <th class="text-white">Location</th>
-                                <th class="text-white">Category</th>
-                                <th class="text-white">Experience</th>
-                               
-                                <th class="text-white">Last Date to apply</th>
-                                <th class="text-white text-center">Applied / Eligible / In Progress / Placed</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                         
-                            <tr class="text-center">
-                                <td>1</td>
-                                <td><a href="{% url 'job_details' %}">Python Developer</a></td>
-                                <td>Infosys pvt lmt</td>
-                                <td>Secunderabad</td>
-                                <td>Full Time</td>
-                                <td>2 years</td>
+                    <div class="col-lg-12">
+                        <div class="table-wrap">
+                            <table id="datable_1" class=" table table-hover display pb-30 w-100 table-bordered">
+                                <thead style="background-color: #132649; color: white;">
+                                    <tr class="text-center">
+                                        <th class="text-white">ID</th>
+                                        <th class="text-white">title</th>
+                                        <th class="text-white">Company Name</th>
+                                        <th class="text-white">Location</th>
+                                        <th class="text-white">Category</th>
+                                        <th class="text-white">Experience</th>
 
-                                <td>15-05-2024</td>
-                                <td class="text-center">
-                                    <a href="{% url 'jobgalleryapplied' %}"><i
-                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
-                                    <a href="{% url 'jobgalleryeligible' %}"><i
-                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
-                                    <a href="{% url 'jobgalleryinprogress' %}"><i
-                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
-                                    <a href="{% url 'jobgalleryplaced' %}"><i
-                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>2</td>
-                                <td><a href="{% url 'job_details' %}">Web Developer</a></td>
-                                <td>Infosys pvt lmt</td>
-                                <td>Hyderabad</td>
-                                <td>Full Time</td>
-                                <td>2 years</td>
+                                        <th class="text-white">Last Date to apply</th>
+                                        <th class="text-white text-center">Applied / Eligible / In Progress / Placed
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                <td>15-05-2024</td>
-                                <td class="text-center">
-                                    <a href="{% url 'jobgalleryapplied' %}"><i
-                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
-                                    <a href="{% url 'jobgalleryeligible' %}"><i
-                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
-                                    <a href="{% url 'jobgalleryinprogress' %}"><i
-                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
-                                    <a href="{% url 'jobgalleryplaced' %}"><i
-                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>3</td>
-                                <td><a href="{% url 'job_details' %}" >MERN Developer</a></td>
-                                <td>Infosys pvt lmt</td>
-                                <td>Hyderabad</td>
-                                <td>Full Time</td>
-                                <td>2 years</td>
+                                    <tr class="text-center">
+                                        <td>1</td>
+                                        <td><a href="{% url 'job_details' %}">Python Developer</a></td>
+                                        <td>Infosys pvt lmt</td>
+                                        <td>Secunderabad</td>
+                                        <td>Full Time</td>
+                                        <td>2 years</td>
 
-                                <td>15-05-2024</td>
-                                <td class="text-center">
-                                    <a href="{% url 'jobgalleryapplied' %}"><i
-                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
-                                    <a href="{% url 'jobgalleryeligible' %}"><i
-                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
-                                    <a href="{% url 'jobgalleryinprogress' %}"><i
-                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
-                                    <a href="{% url 'jobgalleryplaced' %}"><i
-                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
-                                </td>
-                            </tr>
-                            <tr class="text-center">
-                                <td>4</td>
-                                <td><a href="{% url 'job_details' %}">React Developer</a></td>
-                                <td>Infosys pvt lmt</td>
-                                <td>Hyderabad</td>
-                                <td>Full Time</td>
-                                <td>2 years</td>
+                                        <td>15-05-2024</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'jobgalleryapplied' %}"><i
+                                                    class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                            <a href="{% url 'jobgalleryeligible' %}"><i
+                                                    class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                            <a href="{% url 'jobgalleryinprogress' %}"><i
+                                                    class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                            <a href="{% url 'jobgalleryplaced' %}"><i
+                                                    class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>2</td>
+                                        <td><a href="{% url 'job_details' %}">Web Developer</a></td>
+                                        <td>Infosys pvt lmt</td>
+                                        <td>Hyderabad</td>
+                                        <td>Full Time</td>
+                                        <td>2 years</td>
 
-                                <td>15-05-2024</td>
-                                <td class="text-center">
-                                    <a href="{% url 'jobgalleryapplied' %}"><i
-                                            class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
-                                    <a href="{% url 'jobgalleryeligible' %}"><i
-                                            class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
-                                    <a href="{% url 'jobgalleryinprogress' %}"><i
-                                            class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
-                                    <a href="{% url 'jobgalleryplaced' %}"><i
-                                            class="glyphicon glyphicon-user text-success fs-4"></i></a>1
-                                </td>
-                            </tr>
-                      
-                        </tbody>
-                    </table>
-                   </div>
-                   </div>
+                                        <td>15-05-2024</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'jobgalleryapplied' %}"><i
+                                                    class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                            <a href="{% url 'jobgalleryeligible' %}"><i
+                                                    class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                            <a href="{% url 'jobgalleryinprogress' %}"><i
+                                                    class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                            <a href="{% url 'jobgalleryplaced' %}"><i
+                                                    class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>3</td>
+                                        <td><a href="{% url 'job_details' %}">MERN Developer</a></td>
+                                        <td>Infosys pvt lmt</td>
+                                        <td>Hyderabad</td>
+                                        <td>Full Time</td>
+                                        <td>2 years</td>
+
+                                        <td>15-05-2024</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'jobgalleryapplied' %}"><i
+                                                    class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                            <a href="{% url 'jobgalleryeligible' %}"><i
+                                                    class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                            <a href="{% url 'jobgalleryinprogress' %}"><i
+                                                    class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                            <a href="{% url 'jobgalleryplaced' %}"><i
+                                                    class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <td>4</td>
+                                        <td><a href="{% url 'job_details' %}">React Developer</a></td>
+                                        <td>Infosys pvt lmt</td>
+                                        <td>Hyderabad</td>
+                                        <td>Full Time</td>
+                                        <td>2 years</td>
+
+                                        <td>15-05-2024</td>
+                                        <td class="text-center">
+                                            <a href="{% url 'jobgalleryapplied' %}"><i
+                                                    class="glyphicon glyphicon-user text-primary fs-4"></i></a>120 /
+                                            <a href="{% url 'jobgalleryeligible' %}"><i
+                                                    class="glyphicon glyphicon-user text-secondary fs-4"></i></a>60 /
+                                            <a href="{% url 'jobgalleryinprogress' %}"><i
+                                                    class="glyphicon glyphicon-user text-warning fs-4"></i></a>10 /
+                                            <a href="{% url 'jobgalleryplaced' %}"><i
+                                                    class="glyphicon glyphicon-user text-success fs-4"></i></a>1
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
-        
+
     </div>
 </div>
 <script>
-  function scrollMenu(direction) {
-    var scrollMenu = document.getElementById("scrollMenu");
-    var scrollAmount =  300 * direction; // Adjust the scroll amount as needed
-    var start = scrollMenu.scrollLeft;
-    var target = start + scrollAmount;
-    var duration = 500; // Adjust duration as needed
-    var startTime = null;
+    function scrollMenu(direction) {
+        var scrollMenu = document.getElementById("scrollMenu");
+        var scrollAmount = 300 * direction; // Adjust the scroll amount as needed
+        var start = scrollMenu.scrollLeft;
+        var target = start + scrollAmount;
+        var duration = 500; // Adjust duration as needed
+        var startTime = null;
 
-    function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        var progress = timestamp - startTime;
-        scrollMenu.scrollLeft = easeInOutQuad(progress, start, scrollAmount, duration);
-        if (progress < duration) {
-            requestAnimationFrame(step);
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = timestamp - startTime;
+            scrollMenu.scrollLeft = easeInOutQuad(progress, start, scrollAmount, duration);
+            if (progress < duration) {
+                requestAnimationFrame(step);
+            }
         }
-    }
 
-    function easeInOutQuad(t, b, c, d) {
-        t /= d / 2;
-        if (t < 1) return c / 2 * t * t + b;
-        t--;
-        return -c / 2 * (t * (t - 2) - 1) + b;
-    }
+        function easeInOutQuad(t, b, c, d) {
+            t /= d / 2;
+            if (t < 1) return c / 2 * t * t + b;
+            t--;
+            return -c / 2 * (t * (t - 2) - 1) + b;
+        }
 
-    requestAnimationFrame(step);
-}
+        requestAnimationFrame(step);
+    }
 
 
 
